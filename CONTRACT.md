@@ -4,7 +4,7 @@
 
 ## Communication
 
-1. **Team Meetings:** Our team will meet once a week every Friday from 6:00-7:30 PM on Discord. Each member will have a chance to discuss their ideas, progress, challenges, and express any concerns they have. Everyone will also rotate being the designated note-taker each meeting, starting with carters3, where notes will be stored in a single Google document. A mutual agreement will be reached on further proceedings to ensure timely progress. Additional weekly meetings will be scheduled on Discord on an ad hoc basis for pressing issues.
+1. **Team Meetings:** Our team will meet once a week every Friday from 6:00-7:30 PM on Discord. Each member will have a chance to discuss their ideas, progress, challenges, and express any concerns they have. Everyone will also rotate being the designated note-taker each meeting, starting with carters3, where notes will be stored in a single Google. A mutual agreement will be reached on further proceedings to ensure timely progress. Additional weekly meetings will be scheduled on Discord on an ad hoc basis for pressing issues.
 
 2. **Assistance:** Each team member can be contacted through email ({carters3, spati20, ialviar2, carrera9}@illinois.edu), Discord, or GroupMe. Regular communication will also be maintained outside the group meetings.
 
@@ -22,4 +22,4 @@
 
 ## Signatures
 
-I, Sarthak Patipati (spati20), a to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I, , agree to the terms of this contract. I, , agree to the terms of this contract.
+I, Sarthak Patipati (spati20), agree to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I, , agree to the terms of this contract. I, , agree to the terms of this contract.
