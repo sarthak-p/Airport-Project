@@ -4,7 +4,7 @@
 
 ## Communication
 
-1. **Team Meetings:** Our team will meet once a week every Friday from 6:00-7:30 PM on Discord. Each member will have a chance to discuss their ideas, progress, challenges, and express any concerns they have. Everyone will also rotate being the designated note-taker each meeting, starting with carters3, where notes will be stored in a single Google. A mutual agreement will be reached on further proceedings to ensure timely progress. Additional weekly meetings will be scheduled on Discord on an ad hoc basis for pressing issues.
+1. **Team Meetings:** Our team will meet once a week every Friday from 6:00-7:30 PM on Discord. Each member will have a chance to discuss their ideas, progress, challenges, and express any concerns they have. Everyone will also rotate being the designated note-taker each meeting, starting with carters3, where notes will be stored in a single Google. Additionally, the note taker of the week will also be responsible for writing one paragraph describing what was accomplished or attempted in that week in the DEVELOPMENT.MD file on github. A mutual agreement will be reached on further proceedings to ensure timely progress. Additional weekly meetings will be scheduled on Discord on an ad hoc basis for pressing issues.
 
 2. **Assistance:** Each team member can be contacted through email ({carters3, spati20, ialviar2, carrera9}@illinois.edu), Discord, or GroupMe. Regular communication will also be maintained outside the group meetings.
 
@@ -19,6 +19,7 @@
 3. **Deadlines:** Each member will try to finish their work before the official deadlines listed on the CS225 Website and unofficial deadlines decided within the group.
 
 4. **Conflict Resolution:** All conflicts will be resolved by the team as a group. Unresolved conflicts go to *Chancellor Jones* for final verdict.
+
 
 ## Signatures
 
