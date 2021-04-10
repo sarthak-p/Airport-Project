@@ -23,4 +23,4 @@
 
 ## Signatures
 
-I, Sarthak Patipati (spati20), agree to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I, , agree to the terms of this contract. I, , agree to the terms of this contract.
+I, Sarthak Patipati (spati20), agree to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I,Sebastian Carrera (carrera9) , agree to the terms of this contract. I, , agree to the terms of this contract.
