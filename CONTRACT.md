@@ -10,7 +10,7 @@
 
 3. **Respect:** Everyone is a team leader in this group. Our aim is to not overshadow anyone, but to pursue our goals as a group. All ideas for the project are accepted and thoroughly considered, but will be implemented only if the majority of the members agree. All decisions will be mutual.
 
-## Colaboration
+## Collaboration
 
 1. **Work Distribution:** At each meeting, we discuss work for the following week and ensure we stay on track. Members can choose what they would like to work on, but the workload/difficulty must remain the same for each member. It is possible to randomly assign work if nobody is willing to take it. Additionally, the note-taker of the week will also be responsible for writing one paragraph describing what was accomplished or attempted in that week in the DEVELOPMENT.MD file on Github.
 
@@ -23,4 +23,4 @@
 
 ## Signatures
 
-I, Sarthak Patipati (spati20), agree to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I,Sebastian Carrera (carrera9) , agree to the terms of this contract. I, , agree to the terms of this contract.
+I, Sarthak Patipati (spati20), agree to the terms of this contract. I, Carter Smith (carters3), agree to the terms of this contract. I, Sebastian Carrera (carrera9), agree to the terms of this contract. I, Isabel Alviar (ialviar2), agree to the terms of this contract.
