@@ -18,7 +18,7 @@
 
 3. **Deadlines:** Each member will try to finish their work before the official deadlines listed on the CS225 Website and unofficial deadlines decided within the group.
 
-4. **Conflict Resolution:** All conflicts will be resolved by the team as a group. Unresolved conflicts go to *Chancellor Jones* for final verdict.
+4. **Conflict Resolution:** All conflicts will be resolved by the team as a group. 
 
 
 ## Signatures
