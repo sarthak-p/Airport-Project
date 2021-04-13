@@ -18,7 +18,7 @@
 
 3. **Deadlines:** Each member will try to finish their work before the official deadlines listed on the CS225 Website and unofficial deadlines decided within the group.
 
-4. **Conflict Resolution:** All conflicts will be resolved by the team as a group. 
+4. **Conflict Resolution:** All conflicts will be resolved by the team as a group. Any unresolved conflicts will be informed to course staff immediately for final decision. 
 
 
 ## Signatures
