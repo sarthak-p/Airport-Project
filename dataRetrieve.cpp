@@ -8,7 +8,7 @@ using namespace std;
 
 Data::Data() {}; 
 
-vector<int> Data::getDeparture(const string & filename) {
+vector<int> Data::getDepartures(const string & filename) {
     ifstream file(filename);
 
     if (file.is_open()) {
@@ -21,15 +21,17 @@ vector<int> Data::getDeparture(const string & filename) {
     return departure;
 }
 
-vector<int> Data::getDeparture(const string &filename) {
+vector<int> Data::getArrivals(const string &filename) {
     ifstream file(filename);
 
     if (file.is_open()) {
         istream_iterator<string> i(file);
         while (!file.eof()) {
-            departure.push_back(*iter);
+            arrivals.push_back(*iter);
             ++iter;
         }
     }
-    return departure;
+    return arrivals;
 }
+
+
