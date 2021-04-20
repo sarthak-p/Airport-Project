@@ -14,8 +14,8 @@ vector<int> Data::getDepartures(const string & filename) {
     if (file.is_open()) {
         istream_iterator<string> i(file);
         while (!file.eof()) {
-            departure.push_back(*iter);
-            ++iter;
+            departure.push_back(*i);
+            ++i;
         }
     }
     return departure;
@@ -27,11 +27,11 @@ vector<int> Data::getArrivals(const string &filename) {
     if (file.is_open()) {
         istream_iterator<string> i(file);
         while (!file.eof()) {
-            arrivals.push_back(*iter);
-            ++iter;
+            arrival.push_back(*i);
+            ++i;
         }
     }
-    return arrivals;
+    return arrival;
 }
 
 
