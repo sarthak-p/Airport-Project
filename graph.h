@@ -21,8 +21,7 @@ class Graph {
         Graph();
         void addEdge(airportNode a, airportNode b);
         void addNode(airportNode input);
-        void removeNode(airportNode )
+        void removeNode(airportNode);
     private:
         vector<adjRoutes> adjList;
-
 };

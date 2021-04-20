@@ -1,4 +1,4 @@
-#include "dataRetrieve.h"
+#include "flight.h"
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -6,24 +6,18 @@
 
 using namespace std; 
 
-Data::Data() {}; 
+Flight::Flight() {}; 
 
-vector<int> Data::getDepartures(const string & filename) {
+vector<int> Flight::flights(const string & filename) {
     ifstream file(filename);
+    string str; 
 
-    if (file.is_open()) {
-        istream_iterator<string> i(file);
-        while (!file.eof()) {
-            departure.push_back(*i);
-            ++i;
-        }
-    }
     return departure;
 }
 
-vector<int> Data::getArrivals(const string &filename) {
+vector<int> Flight::routes(const string &filename) {
     ifstream file(filename);
-
+    string line; 
     if (file.is_open()) {
         istream_iterator<string> i(file);
         while (!file.eof()) {
