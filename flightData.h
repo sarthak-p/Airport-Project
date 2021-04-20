@@ -6,7 +6,7 @@ using namespace std;
 //class to read in flight data 
 class flightData {
     public:
-    flightData()
+    flightData();
 
     private:
     int var; 
