@@ -9,20 +9,27 @@ using namespace std;
 struct airportNode {
     string name, code;
     double latitude, longitude;
-    airportNode * next;
+    vector<route> edgeList;
+    airportNode(string n, string c, double lat, double longi, vector<route> edges): name(n), code(c), latitude(lat), longitude(longi) {
+        for (auto destination : edges) {
+            edgeList.push_back(destination);
+        }
+    }
 };
 
-struct adjRoutes {
-    airportNode * first;
+struct route {
+    airportNode source, destination;
+    route(airportNode src, airportNode dest): source(src), destination(dest) {}
 };
 
 class Graph {
     public:
         Graph();
-        void addEdge(airportNode a, airportNode b);
-        void addNode(airportNode input);
-        void removeNode(airportNode )
+        void addEdge(route edge);
+        void removeEdge(route edge);
+        void addNode(airportNode node);
+        void removeNode(airportNode node);
+        void print();
     private:
-        vector<adjRoutes> adjList;
-
+        vector<airportNode> adjList;
 };
