@@ -1,18 +1,28 @@
-#pragma once
-#include <list>
-
 #include "graph.h"
-
 #include <iostream>
-#include <vector>
 
-using namespace std;
+using namespace std; 
 
-struct airportNode {
-    airportNode *next;
-};
+Graph::Graph() {
 
-struct routeEdge {
-    string
-};
+}
 
+void Graph::addNode(airportNode node) {
+
+}
+
+void Graph::addEdge(route edge) {
+
+}
+
+void Graph::removeEdge(route edge) {
+
+}
+
+void Graph::removeNode(airportNode node) {
+
+}
+
+void Graph::print() {
+    
+}
