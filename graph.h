@@ -10,11 +10,11 @@ struct airportNode {
     string name, code;
     double latitude, longitude;
     vector<route> edgeList;
-    airportNode(string n, string c, double lat, double longi, vector<route> edges): name(n), code(c), latitude(lat), longitude(longi) {
+    airportNode(string n, string c, double lat, double longi, vector<route> edges): name(n), code(c), latitude(lat), longitude(longi) { 
         for (auto destination : edges) {
             edgeList.push_back(destination);
         }
-    }
+    } // extra } error here - why? 
 };
 
 struct route {
