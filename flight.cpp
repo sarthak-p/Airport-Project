@@ -36,22 +36,3 @@ void Flight::airport(const string & filename, string line) {
 }
 
 
-int main() {
-    ifstream airportFile("airports.dat");
-    string name, sname, country, ID, cID, lat, longi;
-    string useless1, useless2, useless3;
-
-    while(airportFile.good()) {
-        getline(s, name, ',');
-        getline(s, sname, ',');
-        getline(s, country, ',');
-        getline(s, ID, ',');
-        getline(s, cID, ',');
-        getline(s, lat, ',');
-        getline(s, longi, ',');
-        getline(s, useless1, ',');
-        getline(s, useless2, ',');
-        getline(s, useless3, '\n');
-    }
-    airportFile.close(); 
-}

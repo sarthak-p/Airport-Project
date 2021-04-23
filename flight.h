@@ -1,17 +1,17 @@
-// #pragma once 
-// #include <vector>
+#pragma once 
+#include <vector>
 
-// using namespace std; 
+using namespace std; 
 
-// class Flight {
-//     public:
-//         Flight();
-//         void airport(const string &filename, string line);
-//         void routes(const string &filename);
+class Flight {
+    public:
+        Flight();
+        void airport(const string &filename, string line);
+        void routes(const string &filename);
 
-//     private:
-//         string routes; 
-//         string airports; 
-//         vector<int> departure;
-//         vector<int> arrival; 
-// };
+    private:
+        string routes; 
+        string airports; 
+        vector<int> departure;
+        vector<int> arrival; 
+};
