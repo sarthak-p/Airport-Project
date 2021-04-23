@@ -6,9 +6,10 @@
 We started initial research on possible algorithms and datasets. Based on group interest, we decided to go ahead with utilizing the route and airport data made available to us. Additionally, we have made a collection of links to research and project info to ensure we adequately meet the project demands.
 
 **Week 1 (11 April 2021 - 17 April 2021):**
-This week we were all busy with class, but we officially divided up different aspects of the final project for planning purposes. Sarth and Carter will be working on implementing the DFS algorithm, Isabel and Sebastian will be working on Dijkstra's Algorithm, and we will all jointly work on implementing Betweeness Centrality. We're going to aim to have at least one of the algorithms completed by the mid-project check-in. Before the mid-project mcheck-in, we will meet at least once to discuss our progress. Lastly, we have begun importing the data and processing it.
+This week we were all busy with class, but we officially divided up different aspects of the final project for planning purposes. Sarth and Carter will be working on implementing the DFS algorithm, Isabel and Sebastian will be working on Dijkstra's Algorithm, and we will all jointly work on implementing Betweeness Centrality. We're going to aim to have at least one of the algorithms completed by the mid-project check-in. Before the mid-project check-in, we will meet at least once to discuss our progress. Lastly, we have begun importing the data and processing it.
 
 **Week 2 (18 April 2021 - 24 April 2021):**
+This week we finished implementing the basic graph structure, started parsing CSV, and began Dijkstra's Algorithm. We also met with our TA for the midpoint check in and discussed our progress and clarified doubts. For the following week, Carter and Sarth will finish the graph class and also creating a graph by acquiring data from the CSV files. Isabel and Sebastian will continue working on Dijkstra's and try to get it done before the next group meeting.  
 
 **Week 3 (25 April 2021 - 1 May 2021):**
 
