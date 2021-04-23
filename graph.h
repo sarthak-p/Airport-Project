@@ -17,9 +17,11 @@ struct airportNode {
     } // extra } error here - why? 
 };
 
+// To-do: Make distance function for finding distance
 struct route {
-    airportNode source, destination;
-    route(airportNode src, airportNode dest): source(src), destination(dest) {}
+    string source, destination;
+    double distance;
+    route(string src, string dest): source(src), destination(dest) {}
 };
 
 class Graph {
