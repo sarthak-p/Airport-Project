@@ -12,6 +12,7 @@ This week we were all busy with class, but we officially divided up different as
 This week we finished implementing the basic graph structure, started parsing CSV, and began Dijkstra's Algorithm. We also met with our TA for the midpoint check in and discussed our progress and clarified doubts. For the following week, Carter and Sarth will finish the graph class and also creating a graph by acquiring data from the CSV files. Isabel and Sebastian will continue working on Dijkstra's and try to get it done before the next group meeting. After next week, we will have the DFS Traversal and Betwenness Centrality left to complete.  
 
 **Week 3 (25 April 2021 - 1 May 2021):**
+This week we were all busy, especially with the midterm for this class, but we were able to finish the CSV parsing and create a make file. Next week, Carter and Sarth will continue working on the graph implementation, specifically setting it up after doing further research. Isabel and Sebastian made good progress on Dijkstra's Algorithm and will have it finished by the next meeting. After next week, we should only have the DFS Traversal and Betweenness Centralty left to complete, then we will begin writing some test cases.
 
 **Week 4 (2 May 2021 - 8 May 2021):**
 
