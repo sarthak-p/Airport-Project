@@ -57,10 +57,6 @@ void Flight::airport(const string & filename, string line) {
     //vector fields
     airportNode entry(name, stoi(ID), stod(stringLat), stod(stringLong));
     airportFile.close();
-<<<<<<< HEAD
 }
 
 
-=======
-}
->>>>>>> 871423fe3c1a68799336a195c0e2c3d3a34b06e8
