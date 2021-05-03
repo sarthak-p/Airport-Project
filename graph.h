@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -15,6 +16,29 @@ struct airportNode {
     //vector<route> edgeList;
     airportNode();
     airportNode(string name, string code, string city, string country, string lat, string longi): name_(name), code_(code), city_(city), country_(country), latitude_(lat), longitude_(longi) {}
+    /** 
+     * Returns -1 if lat/long are unknown, else returns distance in km
+     * Distance calculated using Haversine formula (https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/)
+    */
+    double distance(const airportNode & airport) const {
+        if (latitude_ == "\\N" || longitude_ == "\\N" || airport.latitude_ == "\\N" || airport.longitude_ == "\\N") {
+            return -1;
+        } else {
+            double long1 = stod(longitude_);
+            double lat1 = stod(latitude_);
+            double long2 = stod(airport.longitude_);
+            double lat2 = stod(airport.latitude_);
+
+            double latDiff = (lat2 - lat1) * M_PI / 180.0;
+            double longDiff = (long2 - long1) * M_PI / 180.0;
+            lat1 = (lat1) * M_PI / 180.0;
+            lat2 = (lat2) * M_PI / 180.0;
+
+            double hav = pow(sin(latDiff / 2), 2) + pow(sin(longDiff / 2), 2) * cos(lat1) * cos(lat2);
+            double radius = 6371;
+            return 2 * radius * asin(sqrt(hav));
+        }
+    }
 };
 
 // To-do: Make distance function for finding distance
