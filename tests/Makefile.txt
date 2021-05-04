@@ -3,30 +3,28 @@ EXE = final_project
 TEST = test
 
 # Add all object files needed for compiling:
-EXE_OBJ = main.o
-OBJS = flight.o graph.o main.o
+OBJS = main.o flight.o graph.o 
+OBJS_DIR = .objs
 
-# Generated files
-CLEAN_RM = out.png 
+# Include
+CXX = clang++
+CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
+LD = clang++
+LDFLAGS = -std=c++1y -stdlib=libc++ -lc++abi -lm
 
-# Use the standard cs225 makefile template:
-include cs225/make/cs225.mk
+.PHONY: all test clean output_msg
 
-# MP-specific target
-# Testing main.cpp
-MAIN_OBJS = testmain.o
-MAIN_OBJS = main.o
-testmain.o: $(MAIN_OBJS)
-	$(LD) $^ $(LDFLAGS) -o $@
+all : $(EXE)
 
-# Testing flight.cpp 
-FLIGHT_OBJS = testflight.o
-FLIGHT_OBJS = flight.o
-testflight.o: $(FLIGHT_OBJS)
-	$(LD) $^ $(LDFLAGS) -o $@
 
-# Testing graph.cpp
-GRAPH_OBJS = testgraph.o
-GRAPH_OBJS += graph.o
-testgraph.o: $(GRAPH_OBJS)
-	$(LD) $^ $(LDFLAGS) -o $@
+$(EXE): output_msg $(patsubst %.o, $(OBJS_DIR)/%.o, $(OBJS))
+	$(LD) $(filter-out $<, $^) $(LDFLAGS) -o $@
+
+$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+main.o : main.cpp flight.cpp graph.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
+
+clean :
+	-rm -f *.o .txt $(EXE) test
