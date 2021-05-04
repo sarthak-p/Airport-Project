@@ -1,0 +1,32 @@
+# Executable names:
+EXE = final_project
+TEST = test
+
+# Add all object files needed for compiling:
+EXE_OBJ = main.o
+OBJS = flight.o graph.o main.o
+
+# Generated files
+CLEAN_RM = out.png 
+
+# Use the standard cs225 makefile template:
+include cs225/make/cs225.mk
+
+# MP-specific target
+# Testing main.cpp
+MAIN_OBJS = testmain.o
+MAIN_OBJS = main.o
+testmain.o: $(MAIN_OBJS)
+	$(LD) $^ $(LDFLAGS) -o $@
+
+# Testing flight.cpp 
+FLIGHT_OBJS = testflight.o
+FLIGHT_OBJS = flight.o
+testflight.o: $(FLIGHT_OBJS)
+	$(LD) $^ $(LDFLAGS) -o $@
+
+# Testing graph.cpp
+GRAPH_OBJS = testgraph.o
+GRAPH_OBJS += graph.o
+testgraph.o: $(GRAPH_OBJS)
+	$(LD) $^ $(LDFLAGS) -o $@
