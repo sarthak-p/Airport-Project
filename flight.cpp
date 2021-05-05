@@ -1,4 +1,4 @@
-//#include "flight.h"
+#include "flight.h"
 #include"graph.h"
 #include <vector>
 #include <fstream>
@@ -13,7 +13,7 @@ using namespace std;
 // Flight::Flight() {
 // }
 
-void Flight::dijkstra(const string &start, const string &end) { 
+    void Flight::dijkstra(const string &start, const string &end) { 
     // Error messages 
     if (!airportIdMap.count(start)) {
         cout << "Error: Starting location not found" << endl;
@@ -26,10 +26,12 @@ void Flight::dijkstra(const string &start, const string &end) {
     }
 
     int startId = airportIdMap[start]; // example ID = ORD is O'Hare
-    int endId = nameToIdMap[end];
+    int endId = airportIdMap[end];
     
     // priority_queue<pair<int, int>> pq;
     priority_queue<pair<double, edge>> pq;
+    unordered_set<int> processed;
+    unordered_map<int, int> parentOfId;
     
     // Gets vector with all connecting routes with an airport
     vector<edge> connectingEdges = routeMap[startId];

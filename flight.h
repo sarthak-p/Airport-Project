@@ -1,6 +1,9 @@
-// #pragma once 
-// #include <vector>
-// #include <unordered_map>
+ #pragma once 
+ #include <vector>
+ #include <unordered_map>
+ #include <unordered_set>
+ #include <queue>
+ #include <deque>
 
 using namespace std; 
 
@@ -19,4 +22,10 @@ class Flight {
 //         string airports; 
 //         vector<int> departure;
 //         vector<int> arrival; 
+};
+
+struct edge {
+    int destID;
+    int sourceID;
+    double distance;
 };
