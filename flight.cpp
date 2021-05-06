@@ -13,7 +13,7 @@ using namespace std;
 // Flight::Flight() {
 // }
 
-    void Flight::dijkstra(const string &start, const string &end) { 
+    std::vector<std::string> Flight::dijkstra(const string &start, const string &end) { 
     // Error messages 
     if (!airportIdMap.count(start)) {
         cout << "Error: Starting location not found" << endl;
@@ -63,7 +63,7 @@ using namespace std;
     
     // If no route is found betwen airports
     if (nextId != endId && pq.empty()) {
-      throw NO_ROUTE_FOUND;
+       cout << "No route found." << endl;
     }
     
     // Traverse parents in deque to put resulting path
@@ -75,13 +75,10 @@ using namespace std;
     }
     resulting_path.push_front(parent);
     
-    // Creates string itinerary to be returned
-    vector<string> itinerary;
-    makeItinerary(path, itinerary);
-    return itinerary;
+    // Need to output path
   
 }
-
+/*
 void Flight::airport(const string & filename, string line) {
     ifstream airportFile(filename.c_str());
     string name, sname, country, ID, cID;
@@ -104,5 +101,5 @@ void Flight::airport(const string & filename, string line) {
     airportNode entry(name, stoi(ID), stod(stringLat), stod(stringLong));
     airportFile.close();
 }
-
+*/
 

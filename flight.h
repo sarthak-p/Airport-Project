@@ -13,9 +13,11 @@ class Flight {
         void airport(const string &filename, string line);
         void routes(const string &filename);
 
-        void dijkstra(const string &start, const string &end);
-        unordered_map<int, vector<edge>> routeMap;
-        unordered_map<string, int> airportIdMap;
+        std::vector<std::string> dijkstra(const string &start, const string &end);
+        
+    private:
+        std::unordered_map<int, vector<edge>> routeMap;
+        std::unordered_map<string, int> airportIdMap;
 
 //     private:
 //         string routes; 
@@ -25,7 +27,7 @@ class Flight {
 };
 
 struct edge {
-    int destID;
-    int sourceID;
+    int destId;
+    int sourceId;
     double distance;
 };
