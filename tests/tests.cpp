@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "../cs225/catch/catch.hpp"
 #include "../graph.h"
 #include "../readFromFile.cpp"
