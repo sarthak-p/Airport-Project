@@ -1,0 +1,30 @@
+# Executable names:
+EXE = final_project
+TEST = test
+
+# Add all object files needed for compiling:
+OBJS = main.o flight.o graph.o 
+OBJS_DIR = .objs
+
+# Include
+CXX = clang++
+CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
+LD = clang++
+LDFLAGS = -std=c++1y -stdlib=libc++ -lc++abi -lm
+
+.PHONY: all test clean output_msg
+
+all : $(EXE)
+
+
+$(EXE): output_msg $(patsubst %.o, $(OBJS_DIR)/%.o, $(OBJS))
+	$(LD) $(filter-out $<, $^) $(LDFLAGS) -o $@
+
+$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+main.o : main.cpp flight.cpp graph.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
+
+clean :
+	-rm -f *.o .txt $(EXE) test
