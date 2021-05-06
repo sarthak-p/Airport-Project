@@ -41,7 +41,6 @@ struct airportNode {
     }
 };
 
-// To-do: Make distance function for finding distance
 struct route {
     string source, destination;
     double distance;

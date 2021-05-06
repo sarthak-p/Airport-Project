@@ -1,4 +1,4 @@
-//#include "flight.h"
+#include "flight.h"
 #include"graph.h"
 #include <vector>
 #include <fstream>
@@ -13,7 +13,7 @@ using namespace std;
 // Flight::Flight() {
 // }
 
-void Flight::dijkstra(const string &start, const string &end) { 
+    std::vector<std::string> Flight::dijkstra(const string &start, const string &end) { 
     // Error messages 
     if (!airportIdMap.count(start)) {
         cout << "Error: Starting location not found" << endl;
@@ -26,10 +26,12 @@ void Flight::dijkstra(const string &start, const string &end) {
     }
 
     int startId = airportIdMap[start]; // example ID = ORD is O'Hare
-    int endId = nameToIdMap[end];
+    int endId = airportIdMap[end];
     
     // priority_queue<pair<int, int>> pq;
     priority_queue<pair<double, edge>> pq;
+    unordered_set<int> processed;
+    unordered_map<int, int> parentOfId;
     
     // Gets vector with all connecting routes with an airport
     vector<edge> connectingEdges = routeMap[startId];
@@ -61,7 +63,7 @@ void Flight::dijkstra(const string &start, const string &end) {
     
     // If no route is found betwen airports
     if (nextId != endId && pq.empty()) {
-      throw NO_ROUTE_FOUND;
+       cout << "No route found." << endl;
     }
     
     // Traverse parents in deque to put resulting path
@@ -73,11 +75,35 @@ void Flight::dijkstra(const string &start, const string &end) {
     }
     resulting_path.push_front(parent);
     
-    // Creates string itinerary to be returned
-    vector<string> itinerary;
-    makeItinerary(path, itinerary);
-    return itinerary;
+    // Need to output path
   
 }
+<<<<<<< HEAD
 
+=======
+/*
+void Flight::airport(const string & filename, string line) {
+    ifstream airportFile(filename.c_str());
+    string name, sname, country, ID, cID;
+    string useless1, useless2, useless3, stringLat, stringLong;
+
+    while (airportFile.good()) {
+        getline(s, name, ',');
+        getline(s, sname, ',');
+        getline(s, country, ',');
+        getline(s, ID, ',');
+        getline(s, cID, ',');
+        getline(s, stringLat, ',');
+        getline(s, stringLong, ',');
+        getline(s, useless1, ',');
+        getline(s, useless2, ',');
+        getline(s, useless3, '\n');
+    }
+
+    //vector fields
+    airportNode entry(name, stoi(ID), stod(stringLat), stod(stringLong));
+    airportFile.close();
+}
+*/
+>>>>>>> 2b11d83dd62deb25106f52ce07af4abbe2054442
 
