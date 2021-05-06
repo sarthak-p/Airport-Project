@@ -12,7 +12,21 @@ Credit to course staff for providing a basic template for this.
 Provided sample was adapted for our specific use case.
 */
 
-vector<route> readToVector(const string & routeFile) {
+/**
+ * @param input stringstream for CSV route data,
+ * @return route with given info
+ */ 
+route readRouteHelp(stringstream &input) {
+    string colVal;
+    vector<string> temp;
+    while (getline(input, colVal, ',')) {
+        temp.push_back(colVal);
+    }
+    route result(temp[2], temp[4]);
+    return result;
+}
+
+vector<route> readRoutes(const string & routeFile) {
     vector<route> result;
     string line, colVal;
     ifstream file;
@@ -21,9 +35,7 @@ vector<route> readToVector(const string & routeFile) {
     if (file.is_open()) {
         while (getline(file, line)) {
             stringstream s(line);
-            while (s >> colVal) {
-                break;
-            }
+            result.push_back(readRouteHelp(s));
         }
     } else {
         throw runtime_error("Opening route file was unsuccesful");
