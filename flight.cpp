@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std; 
+using namespace std;
 
 // Flight::Flight() {
 // }
@@ -78,9 +78,6 @@ using namespace std;
     // Need to output path
   
 }
-<<<<<<< HEAD
-
-=======
 /*
 void Flight::airport(const string & filename, string line) {
     ifstream airportFile(filename.c_str());
@@ -105,5 +102,4 @@ void Flight::airport(const string & filename, string line) {
     airportFile.close();
 }
 */
->>>>>>> 2b11d83dd62deb25106f52ce07af4abbe2054442
 

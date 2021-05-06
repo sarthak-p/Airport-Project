@@ -56,6 +56,8 @@ class Graph {
         void removeNode(airportNode node);
         void print();
         vector<route> getAdj(airportNode node);
+        int gid;
     private:
         vector<airportNode> adjList;
+        
 };

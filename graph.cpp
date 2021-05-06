@@ -4,7 +4,7 @@
 using namespace std; 
 
 Graph::Graph() {
-
+  gid = 1;
 }
 
 void Graph::addNode(airportNode node) {
