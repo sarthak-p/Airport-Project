@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <unordered_map>
+#include <list>
 
 using namespace std;
 
@@ -39,7 +41,22 @@ struct airportNode {
             return 2 * radius * asin(sqrt(hav));
         }
     }
+
+    string getName() const {
+        return code_; 
+    }
 };
+
+struct get_node {
+    get_node(const std::string & s) : out(s) {}
+    bool operator()(const airportNode & obj) const {
+        return obj.getName() == out;
+    }
+private:
+    const std::string & out;
+};
+
+
 
 struct route {
     string source, destination;
@@ -50,14 +67,12 @@ struct route {
 class Graph {
     public:
         Graph();
-        void addEdge(route edge);
-        void removeEdge(route edge);
-        void addNode(airportNode node);
-        void removeNode(airportNode node);
+        void makeGraph(vector<airportNode> airports, vector<route> routes);
+        //void removeEdge(route edge);
+        //void addNode(airportNode node);
+        //void removeNode(airportNode node);
         void print();
         vector<route> getAdj(airportNode node);
-        int gid;
     private:
-        vector<airportNode> adjList;
-        
+        unordered_map<airportNode, list<pair<airportNode, double > > > adjL; 
 };

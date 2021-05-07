@@ -13,7 +13,7 @@ using namespace std;
 // Flight::Flight() {
 // }
 
-    std::vector<std::string> Flight::dijkstra(const string &start, const string &end) { 
+std::vector<std::string> Flight::dijkstra(const string &start, const string &end) { 
     // Error messages 
     if (!airportIdMap.count(start)) {
         cout << "Error: Starting location not found" << endl;
@@ -76,7 +76,6 @@ using namespace std;
     resulting_path.push_front(parent);
     
     // Need to output path
-  
 }
 /*
 void Flight::airport(const string & filename, string line) {
