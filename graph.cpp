@@ -3,10 +3,11 @@
 
 using namespace std; 
 
-Graph::Graph() {
+Graph::Graph(vector<airportNode> first, vector<route> second) {
+    makeGraph(vector<airportNode> first, vector<route> second);
 }
 
-void Graph::makeGraph(vector<airportNodes> airports, vector<route> routes) {
+void Graph::makeGraph(vector<airportNode> airports, vector<route> routes) {
     for (auto it = routes.begin(); it != routes.end; ++it) {
         string source = (*it).source;
         string destination = (*it).destination;
