@@ -15,5 +15,6 @@ This week we finished implementing the basic graph structure, started parsing CS
 This week we were all busy, especially with the midterm for this class, but we were able to finish the CSV parsing and create a make file. Next week, Carter and Sarth will continue working on the graph implementation, specifically setting it up after doing further research. Isabel and Sebastian made good progress on Dijkstra's Algorithm and will have it finished by the next meeting. After next week, we should only have the DFS Traversal and Betweenness Centralty left to complete, then we will begin writing some test cases.
 
 **Week 4 (2 May 2021 - 8 May 2021):**
+Over this past week we made substantial progress with our code base. Parsing the airport and route nodes was completed and tested thoroughly. Basic graph structure was also nearly completed alongside our DFS implementation. Dijkstra’s algorithm was nearly completed as well. Lastly, final research for Betweeness Centrality was completed and work began on that algorithm. In terms of non-technical progress, we also refined the tests and began working on our Results.md file and final presentation.
 
 **Week 5 (9 May 2021 - 15 May 2021):**
