@@ -56,8 +56,6 @@ struct airportNode {
 //     const std::string & out;
 // };
 
-
-
 struct route {
     string source, destination;
     double distance;

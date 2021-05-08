@@ -23,6 +23,13 @@ int main() {
     return 0;
 }
 
+void graph_test() {
+    vector<Airportnode> a = readAirports(); 
+    vector<route> b = readRoutes(); 
+    Graph graph = Graph(a, b); 
+    graph.print(); 
+}
+
 //comment out to run DFS
 void sebby() {
   std::cout << "This is SEBBY" << std::endl;
@@ -40,14 +47,14 @@ void sebby() {
   std::cout << "sample of AdjMatrix: " << myMatrix.matrix[0][0] << std::endl;
   
   
-  //make sample graph:
-  //Graph sG = Graph();
-  //std::cout << "Graph id: " << sG.gid << std::endl;
-  //sG.addNode(airportVector[0]);
-  //sG.addNode(airportVector[1]);
-  //sG.addEdge(sampleRoute);
+//   make sample graph:
+//   Graph sG = Graph();
+//   std::cout << "Graph id: " << sG.gid << std::endl;
+//   sG.addNode(airportVector[0]);
+//   sG.addNode(airportVector[1]);
+//   sG.addEdge(sampleRoute);
   
-  //sG.print();
+//   sG.print();
   
   
   //dijkstra("GKA", "MAG");
