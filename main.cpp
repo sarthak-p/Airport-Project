@@ -6,6 +6,7 @@
 
 void sebby(); ////comment out to run DFS
 int main() {
+    std::cout << "This is our main file" << std::endl;
     sebby(); //comment out to run DFS
     return 0; //comment out to run DFS
     
@@ -22,14 +23,14 @@ int main() {
 
     return 0;
 }
-
+/**
 void graph_test() {
     vector<Airportnode> a = readAirports(); 
     vector<route> b = readRoutes(); 
     Graph graph = Graph(a, b); 
     graph.print(); 
 }
-
+**/
 //comment out to run DFS
 void sebby() {
   std::cout << "This is SEBBY" << std::endl;
@@ -44,7 +45,14 @@ void sebby() {
   std::cout << "route vector size: " << routeVector.size() << std::endl;
   
   adjMatrix myMatrix(airportVector, routeVector);
-  std::cout << "sample of AdjMatrix: " << myMatrix.matrix[0][0] << std::endl;
+  std::cout << "sample of AdjMatrix (2810, 2832): " << myMatrix.matrix[2810][2832] << std::endl;
+  //myMatrix.nameToIndex["\"ORD\""]
+  /**for (int i =0; i < 100; i++) {
+    for (int j = 0; j < 100; j++) {
+      std::cout << "sample of AdjMatrix: " << myMatrix.matrix[i][j] << std::endl;
+    }
+  }**/
+  
   
   
 //   make sample graph:

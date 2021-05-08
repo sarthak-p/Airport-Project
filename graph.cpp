@@ -2,6 +2,7 @@
 #include <iostream>
 
 using namespace std; 
+/**
 
 Graph::Graph(vector<airportNode> first, vector<route> second) {
     makeGraph(vector<airportNode> first, vector<route> second);
@@ -47,4 +48,4 @@ void Graph::print() {
 
 unordered_map<airportNode, list<pair<airportNode, double>>> Graph::getGraph() {
     return adjL;
-}
+}**/

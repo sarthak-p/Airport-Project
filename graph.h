@@ -61,7 +61,7 @@ struct route {
     double distance;
     route(string src, string dest): source(src), destination(dest) {}
 };
-
+/**
 class Graph {
     public:
         Graph(vector<airportNode> first, vector<route> second);
@@ -73,4 +73,4 @@ class Graph {
         //vector<route> getAdj(airportNode node);
     private:
         unordered_map<airportNode, list<pair<airportNode, double > > > adjL; 
-};
+};**/
