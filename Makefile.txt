@@ -2,7 +2,7 @@
 EXENAME = final # Do ./final to run
 
 # Object Types
-OBJS = main.o flight.o graph.o tests.o
+OBJS = main.o flight.o graph.o
 
 # Compilation Flags
 CXX = clang++
@@ -23,8 +23,8 @@ output_msg: ; $(CLANG_VERSION_MSG)
 $(EXENAME): output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-readFromFile.o: main.cpp flight.cpp graph.cpp tests.cpp
-	$(CXX) $(CXXFLAGS) main.cpp flight.cpp graph.cpp tests.cpp
+readFromFile.o: main.cpp flight.cpp graph.cpp 
+	$(CXX) $(CXXFLAGS) main.cpp flight.cpp graph.cpp 
 
 test: output_msg catch/catchmain.cpp tests/tests.cpp readFromFile.cpp
 	$(LD) catch/catchmain.cpp tests/tests.cpp readFromFile.cpp $(LDFLAGS) -o test
