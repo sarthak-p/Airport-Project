@@ -1,12 +1,5 @@
 #include "flight.h"
 #include"graph.h"
-#include <vector>
-#include <fstream>
-#include <istream>
-#include <cstdlib>
-#include <sstream>
-#include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -25,7 +18,7 @@ std::vector<std::string> Flight::dijkstra(const string &start, const string &end
         cout << "Error: Starting and ending location are the same" << endl;
     }
 
-    int startId = airportIdMap[start]; // example ID = ORD is O'Hare
+    int startId = airportIdMap[start]; //example ID = ORD is O'Hare, Chicago 
     int endId = airportIdMap[end];
     
     // priority_queue<pair<int, int>> pq;
@@ -76,6 +69,58 @@ std::vector<std::string> Flight::dijkstra(const string &start, const string &end
     resulting_path.push_front(parent);
     
     // Need to output path
+}
+
+/**
+ * Performs a DFS traversal of the graph 
+ * Param: ID of the Airport where traversal begins
+ * For example, start = JFK is John. F Kennedy Airport, NY  
+ * */
+void Flight::DFS(const string & start, vector<edge> paths) {
+
+  //check if given airport exists in our map  
+  if (airportIdMap.count(start) == 0) {
+    cout << "Error: Starting Location Not Found" << endl;
+  }
+
+  //our root or the chosen start point 
+  int current = airportIdMap[start]; // example ID = 3797 is JFK
+
+  //create a temp adjacency list that holds connected edge info 
+  vector<vector<int>> temp_adj; 
+
+  //populate our adjacency list using info from paths 
+  for (auto & i : paths) {
+    temp_adj[i.sourceId].push_back(i.destId);
+    temp_adj[i.destId].push_back(i.sourceId);
+  }
+
+  //bool vector to keep track of visited nodes 
+  vector<bool> visited(14110);
+  for (int i = 0; i < 14110; i++) {
+    visited[i] = false;
+  }
+
+  //make a stack and push our root while marking it as visited 
+  stack<int> reference; 
+  reference.push(current);
+  visited[current] = true; 
+  
+  //perform DFS 
+  while (!reference.empty()) {
+    current = reference.top(); 
+    reference.pop(); 
+
+    if (visited[current] == false) {
+      visited[current] = true; 
+    }
+
+    for (int code : temp_adj[current]) {
+      if (visited[code] == false) {
+        reference.push(code);
+      }
+    }
+  }
 }
 /*
 void Flight::airport(const string & filename, string line) {

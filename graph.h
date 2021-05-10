@@ -1,28 +1,29 @@
 #pragma once
-
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <cmath>
+#include <utility>
 #include <unordered_map>
 #include <list>
 
 using namespace std;
-
 /**
  * Using IATA codes for airports
  * Construct node with strings for lat/long, convert to double if valid
 */
 struct airportNode {
+public:
     string name_, code_, city_, country_, latitude_, longitude_;
     //vector<route> edgeList;
     airportNode();
-    airportNode(string name, string code, string city, string country, string lat, string longi): name_(name), code_(code), city_(city), country_(country), latitude_(lat), longitude_(longi) {}
+    airportNode(string name, string code, string city, string country, string lat, string longi) : name_(name), code_(code), city_(city), country_(country), latitude_(lat), longitude_(longi) {}
     /** 
      * Returns -1 if lat/long are unknown, else returns distance in km
      * Distance calculated using Haversine formula (https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/)
     */
-    double distance(const airportNode & airport) const {
+    double dist(const airportNode &airport) const {
         if (latitude_ == "\\N" || longitude_ == "\\N" || airport.latitude_ == "\\N" || airport.longitude_ == "\\N") {
             return -1;
         } else {
@@ -33,44 +34,70 @@ struct airportNode {
 
             double latDiff = (lat2 - lat1) * M_PI / 180.0;
             double longDiff = (long2 - long1) * M_PI / 180.0;
-            lat1 = (lat1) * M_PI / 180.0;
-            lat2 = (lat2) * M_PI / 180.0;
+            lat1 = (lat1)*M_PI / 180.0;
+            lat2 = (lat2)*M_PI / 180.0;
 
             double hav = pow(sin(latDiff / 2), 2) + pow(sin(longDiff / 2), 2) * cos(lat1) * cos(lat2);
             double radius = 6371;
             return 2 * radius * asin(sqrt(hav));
         }
     }
+    
+    // string getName() const {
+    //     return code_;
+    // }
 
-    string getName() const {
-        return code_; 
-    }
+    // bool operator<(const airportNode &a) const {
+    //     return a.latitude_ < a.longitude_;
+    // }
+
+    // bool operator==(const airportNode &a) const {
+    //     return !(*this < a || a < *this);
+    // }
+
+    // bool operator!=(const airportNode &a) const {
+    //     return (*this < a || a < *this);
+    // }
+    
 };
-
-// struct get_node {
-//     get_node(const std::string & s) : out(s) {}
-//     bool operator()(const airportNode & obj) const {
-//         return obj.getName() == out;
-//     }
-// private:
-//     const std::string & out;
-// };
 
 struct route {
     string source, destination;
     double distance;
-    route(string src, string dest): source(src), destination(dest) {}
+    route(string src, string dest) : source(src), destination(dest) {}
 };
-/**
-class Graph {
-    public:
-        Graph(vector<airportNode> first, vector<route> second);
-        void makeGraph(vector<airportNode> airports, vector<route> routes);
-        //void removeEdge(route edge);
-        //void addNode(airportNode node);
-        //void removeNode(airportNode node);
-        void print();
-        //vector<route> getAdj(airportNode node);
-    private:
-        unordered_map<airportNode, list<pair<airportNode, double > > > adjL; 
-};**/
+
+
+// namespace std {
+//     template <>
+//     struct hash<airportNode> {
+//         std::size_t operator()(const airportNode &k) const {
+//             return std::hash<std::string>()(k.code_);
+//         }
+//     };
+// }
+
+// struct match {
+//     match(const std::string &s) : s_(s) {}
+//     bool operator()(const airportNode &obj) const {
+//         return obj.getName() == s_;
+//     }
+
+// private:
+//     const std::string &s_;
+// };
+
+
+
+// class Graph {
+//     public:
+//         Graph(vector<airportNode> first, vector<route> second);
+//         void makeGraph(vector<airportNode> airports, vector<route> routes);
+//         //void removeEdge(route edge);
+//         //void addNode(airportNode node);
+//         //void removeNode(airportNode node);
+//         void print();
+//         //vector<route> getAdj(airportNode node);
+//     private:
+//         unordered_map<airportNode, list<pair<airportNode, double > > > adjL; 
+// };

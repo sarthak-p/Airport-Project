@@ -1,7 +1,7 @@
 #include <iostream>
 #include "graph.h"
 #include "readFromFile.cpp"
-#include "adjMatrix.h"
+//#include "adjMatrix.h"
 //#include "dijkstra.h"
 
 void sebby(); ////comment out to run DFS
@@ -15,7 +15,7 @@ int main() {
     std::vector<airportNode> airportVector = readAirports("data/airports.dat");
     std::cout << "first airportNode: " << airportVector[0].name_ << std::endl;
     std::cout << "second airportNode: " << airportVector[1].name_ << std::endl;
-    std::cout << "distance: " << airportVector[0].distance(airportVector[1]) << std::endl;
+    std::cout << "distance: " << airportVector[0].dist(airportVector[1]) << std::endl;
 
     std::vector<route> routeVector = readRoutes("data/routes.dat");
     std::cout << "Route #1 source: " << routeVector[0].source << std::endl;
@@ -32,20 +32,20 @@ void graph_test() {
 }
 **/
 //comment out to run DFS
-void sebby() {
-  std::cout << "This is SEBBY" << std::endl;
-  std::vector<airportNode> airportVector = readAirports("data/airports.dat");
-  std::cout << "Airports read from file" << std::endl;
-  std::cout << "first airportNode: " << airportVector[0].name_ << std::endl;
-  std::cout << "second airportNode: " << airportVector[1].name_ << std::endl;
+// void sebby() {
+//   std::cout << "This is SEBBY" << std::endl;
+//   std::vector<airportNode> airportVector = readAirports("data/airports.dat");
+//   std::cout << "Airports read from file" << std::endl;
+//   std::cout << "first airportNode: " << airportVector[0].name_ << std::endl;
+//   std::cout << "second airportNode: " << airportVector[1].name_ << std::endl;
   
-  std::vector<route> routeVector = readRoutes("data/routes.dat");
-  route sampleRoute = routeVector[17314];
+//   std::vector<route> routeVector = readRoutes("data/routes.dat");
+//   route sampleRoute = routeVector[17314];
   
-  std::cout << "route vector size: " << routeVector.size() << std::endl;
+//   std::cout << "route vector size: " << routeVector.size() << std::endl;
   
-  adjMatrix myMatrix(airportVector, routeVector);
-  std::cout << "sample of AdjMatrix (2810, 2832): " << myMatrix.matrix[2810][2832] << std::endl;
+//   adjMatrix myMatrix(airportVector, routeVector);
+//   std::cout << "sample of AdjMatrix (2810, 2832): " << myMatrix.matrix[2810][2832] << std::endl;
   //myMatrix.nameToIndex["\"ORD\""]
   /**for (int i =0; i < 100; i++) {
     for (int j = 0; j < 100; j++) {
@@ -67,4 +67,4 @@ void sebby() {
   
   //dijkstra("GKA", "MAG");
   
-}
+//}
