@@ -1,4 +1,5 @@
 #include "flight.h"
+#include "readFromFile.cpp"
 #include"graph.h"
 
 using namespace std;
@@ -76,14 +77,13 @@ std::vector<std::string> Flight::dijkstra(const string &start, const string &end
  * Param: ID of the Airport where traversal begins
  * For example, start = JFK is John. F Kennedy Airport, NY  
  * */
+
 void Flight::DFS(const string & start, vector<edge> paths) {
 
-  //check if given airport exists in our map  
   if (airportIdMap.count(start) == 0) {
-    cout << "Error: Starting Location Not Found" << endl;
+    cout << "Error: Starting Location Not Found" << endl; 
   }
 
-  //our root or the chosen start point 
   int current = airportIdMap[start]; // example ID = 3797 is JFK
 
   //create a temp adjacency list that holds connected edge info 
@@ -92,29 +92,27 @@ void Flight::DFS(const string & start, vector<edge> paths) {
   //populate our adjacency list using info from paths 
   for (auto & i : paths) {
     temp_adj[i.sourceId].push_back(i.destId);
-    temp_adj[i.destId].push_back(i.sourceId);
+    temp_adj[i.destId].push_back(i.sourceId); 
   }
 
   //bool vector to keep track of visited nodes 
   vector<bool> visited(14110);
+
   for (int i = 0; i < 14110; i++) {
-    visited[i] = false;
+    visited[i] = false; 
   }
 
-  //make a stack and push our root while marking it as visited 
   stack<int> reference; 
   reference.push(current);
   visited[current] = true; 
-  
+
   //perform DFS 
   while (!reference.empty()) {
     current = reference.top(); 
     reference.pop(); 
-
     if (visited[current] == false) {
       visited[current] = true; 
     }
-
     for (int code : temp_adj[current]) {
       if (visited[code] == false) {
         reference.push(code);
@@ -122,6 +120,80 @@ void Flight::DFS(const string & start, vector<edge> paths) {
     }
   }
 }
+
+/**
+ * Performs a DFS traversal of the graph 
+ * Param: start: start point, end: end point, paths: vector of edges 
+ * */
+vector<string> Flight::DFS2(const string &start, const string &end, vector<edge> paths) {
+
+  if (airportIdMap.count(start) == 0) {
+    cout << "Error: Starting Location Not Found" << endl;
+  }
+
+  if (airportIdMap.count(end) == 0) {
+    cout << "Error: Destination Location Not Found" << endl;
+  }
+
+  if (start == end) {
+    cout << "You are already at your Destination :-)" << endl;
+  }
+
+  //our root or the chosen start and end points
+  int begin = airportIdMap[start]; // example ID = 3797 is JFK
+  int final = airportIdMap[end]; 
+
+  //create a temp adjacency list that holds connected edge info
+  vector<vector<int>> temp_adj;
+
+  //vector to keep track of our visited points 
+  vector<int> track(14110);
+  track[begin] = begin;
+  int current = begin;  
+
+  //populate our adjacency list using info from paths
+  for (auto & i : paths) {
+    temp_adj[i.sourceId].push_back(i.destId);
+    temp_adj[i.destId].push_back(i.sourceId);
+  }
+
+  //bool vector to keep track of visited nodes
+  vector<bool> visited(14110);
+  for (int i = 0; i < 14110; i++) {
+    visited[i] = false;
+  }
+
+  //make a stack 
+  stack<int> reference;
+  reference.push(current);
+  visited[current] = true;
+
+  //perform DFS
+  while (!reference.empty()) {
+    current = reference.top();
+    reference.pop();
+
+    if (visited[current] == false) {
+      visited[current] = true;
+    }
+
+    for (int code : temp_adj[current]) {
+      if (visited[code] == false) {
+        reference.push(code);
+        track.push_back(code);
+      }
+    }
+    if (current == final) {
+      break; 
+    }
+  }
+  vector<string>converted; 
+  for (int i : track) {
+    converted.push_back(idConvertMap[i]); 
+  }
+  return converted; 
+}
+
 /*
 void Flight::airport(const string & filename, string line) {
     ifstream airportFile(filename.c_str());
@@ -146,4 +218,3 @@ void Flight::airport(const string & filename, string line) {
     airportFile.close();
 }
 */
-
