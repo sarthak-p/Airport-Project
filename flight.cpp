@@ -88,8 +88,6 @@ void Flight::DFS(const string & start, vector<edge> paths) {
 
   //create a temp adjacency list that holds connected edge info 
   vector<vector<int>> temp_adj; 
-
-  //populate our adjacency list using info from paths 
   for (auto & i : paths) {
     temp_adj[i.sourceId].push_back(i.destId);
     temp_adj[i.destId].push_back(i.sourceId); 
@@ -97,11 +95,11 @@ void Flight::DFS(const string & start, vector<edge> paths) {
 
   //bool vector to keep track of visited nodes 
   vector<bool> visited(14110);
-
   for (int i = 0; i < 14110; i++) {
     visited[i] = false; 
   }
 
+  //stack to hold nodes 
   stack<int> reference; 
   reference.push(current);
   visited[current] = true; 
@@ -139,19 +137,10 @@ vector<string> Flight::DFS2(const string &start, const string &end, vector<edge>
     cout << "You are already at your Destination :-)" << endl;
   }
 
-  //our root or the chosen start and end points
-  int begin = airportIdMap[start]; // example ID = 3797 is JFK
+  int begin = airportIdMap[start]; 
   int final = airportIdMap[end]; 
 
-  //create a temp adjacency list that holds connected edge info
   vector<vector<int>> temp_adj;
-
-  //vector to keep track of our visited points 
-  vector<int> track(14110);
-  track[begin] = begin;
-  int current = begin;  
-
-  //populate our adjacency list using info from paths
   for (auto & i : paths) {
     temp_adj[i.sourceId].push_back(i.destId);
     temp_adj[i.destId].push_back(i.sourceId);
@@ -163,7 +152,12 @@ vector<string> Flight::DFS2(const string &start, const string &end, vector<edge>
     visited[i] = false;
   }
 
-  //make a stack 
+  //vector to keep track of our visited points
+  vector<int> track(14110);
+  track[begin] = begin;
+  int current = begin;
+
+  //stack to add nodes 
   stack<int> reference;
   reference.push(current);
   visited[current] = true;

@@ -26,9 +26,6 @@ class Flight {
         Flight();
         void airport(const string &filename, string line);
         void routes(const string &filename);
-           //vector<string> dijkstra(const string &start, const string &end);
-           //unordered_map<int, vector<edge>> routeMap;
-           //unordered_map<string, int> airportIdMap;
         std::vector<std::string> dijkstra(const string &start, const string &end);
         void DFS(const string & start, vector<edge> paths);
         vector<string>DFS2(const string & start, const string & end, vector<edge> paths);
