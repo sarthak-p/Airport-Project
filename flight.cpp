@@ -73,8 +73,8 @@ std::vector<std::string> Flight::dijkstra(const string &start, const string &end
 }
 
 /**
- * Performs a DFS traversal of the graph 
- * Param: ID of the Airport where traversal begins
+ * Performs a DFS traversal of the whole graph 
+ * Param: start: start point, path: vector of edges 
  * For example, start = JFK is John. F Kennedy Airport, NY  
  * */
 
@@ -120,7 +120,7 @@ void Flight::DFS(const string & start, vector<edge> paths) {
 }
 
 /**
- * Performs a DFS traversal of the graph 
+ * Performs a DFS traversal of the graph from start to end point 
  * Param: start: start point, end: end point, paths: vector of edges 
  * */
 vector<string> Flight::DFS2(const string &start, const string &end, vector<edge> paths) {

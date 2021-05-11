@@ -16,10 +16,7 @@ Links to the datasets:
 
 ## Algorithms
 
-- Depth-First Search (DFS): Create two versions of DFS, 
-a) Inputs: starting airport name and vector of edges. Output = no output but traverses the entire graph starting from the given airport. Ideal runtime: O(V + E), where V = Vertices and E = Edges.
-
-b) Inputs: starting and ending airport names and vector of edges. Output: returns a vector of strings with all possible airports between the start and destination airport. Ideal runtime: O(V + E), where V = vertices and E = Edges. 
+- Depth-First Search (DFS): Create two versions of DFS. 1) Inputs: starting airport name and vector of edges. Output = no output but traverses the entire graph starting from the given airport. Ideal runtime: O(V + E), where V = Vertices and E = Edges. 2) Inputs: starting and ending airport names and vector of edges. Output: returns a vector of strings with all possible airports between the start and destination airport. Ideal runtime: O(V + E), where V = vertices and E = Edges. 
 
 - Dijkstra’s Algorithm: Finding the shortest path between two nodes (airports). Useful for finding the shortest distance between two destinations. Input: Names of two airports, Output: Returns shortest path between those airports. Ideal runtime: O( (E + V) log V), where V = Vertices and E = Edges.
 
