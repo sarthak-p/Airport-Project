@@ -2,7 +2,7 @@
 
 *A document with exactly one paragraph per week, describing what was accomplished or attempted in that week. For full credit, your team must add a paragraph to this document every week (starting the week project goals are confirmed). You are strongly encouraged to as a git commit.*
 
-**Pre-project Planning**
+**Pre-project Planning:**
 We started initial research on possible algorithms and datasets. Based on group interest, we decided to go ahead with utilizing the route and airport data made available to us. Additionally, we have made a collection of links to research and project info to ensure we adequately meet the project demands.
 
 **Week 1 (11 April 2021 - 17 April 2021):**
