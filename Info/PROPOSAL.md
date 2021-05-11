@@ -28,20 +28,20 @@ Links to the datasets:
 - **April 16th:** Mid-project Check-in
 
   - Have datasets downloaded and converted
-  - Completed depth-first search traversal algorithm
+  - Completed DFS traversal 
 
 - **May 1st:** Third-project Check-in
 
   - Start final report
   - Complete second algorithm
-  - Begin working on begtweeness centrality algorithm
+  - Begin working on Normalized Degree Centrality
 
 - **May 10th:** Video deadline
 
   - Finalize all code and squash bugs
   - Ensure testing suite is in working order
   - Review final report
-  - Film video
+  - Record final video
 
 - **May 12th:** Final Project Deliverables
 
