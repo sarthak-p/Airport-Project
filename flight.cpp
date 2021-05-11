@@ -80,11 +80,11 @@ std::vector<std::string> Flight::dijkstra(const string &start, const string &end
 
 void Flight::DFS(const string & start, vector<edge> paths) {
 
-  if (airportIdMap.count(start) == 0) {
+  if (!airportIdMap.count(start)) {
     cout << "Error: Starting Location Not Found" << endl; 
   }
 
-  int current = airportIdMap[start]; // example ID = 3797 is JFK
+  int current = airportIdMap[start]; // example ID for JFK is 3797
 
   //create a temp adjacency list that holds connected edge info 
   vector<vector<int>> temp_adj; 
