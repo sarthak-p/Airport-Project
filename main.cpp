@@ -32,10 +32,10 @@ int main() {
         cin >> option;
 
         // Ensure proper safety of input 
-        while (cin.fail() || option < 0 || option > 3) {
+        while (cin.fail()) {
             cin.clear();
             cin.ignore();
-            cout << "Looks like you type the correct input" << endl;
+            cout << "Looks like you didn't type the correct input" << endl;
             cin >> option;
         }
 

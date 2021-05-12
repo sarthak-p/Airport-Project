@@ -13,8 +13,9 @@ TEST_CASE("Succesfully parses airports", "[weight=1]") {
     airportNode firstAirport = result[0];
     airportNode secondAirport = result[1];
     double distance = firstAirport.dist(secondAirport);
-    REQUIRE(firstAirport.code_ == "GKA");
-    REQUIRE(distance == 106.714);
+    REQUIRE(firstAirport.code_ == "\"GKA\"");
+    REQUIRE(distance > 100);
+    REQUIRE(distance < 110);
 }
 
 TEST_CASE("Succesfully parses routes", "[weight=1]") {

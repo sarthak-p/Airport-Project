@@ -46,7 +46,7 @@ int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix my
   //printf("Vertex\t Distance\tPath");
   int i = destIndex;
   //for (int i = 1; i < V; i++) {
-  std::cout << "-----------------------------------------------------------------------------------" << std::endl;
+  //std::cout << "-----------------------------------------------------------------------------------" << std::endl;
   std::cout << "Shortest Total Distance: " << dist[i] << " kilometers" << std::endl;
   //std::cout << "test" << std::endl;
   std::cout << "Shortest Airport Path: ";

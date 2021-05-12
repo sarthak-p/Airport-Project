@@ -16,7 +16,7 @@ Provided sample was adapted for our specific use case.
  * @param input stringstream for CSV route data,
  * @return route with given info
  */ 
-route readRouteHelp(stringstream &input) {
+static route readRouteHelp(stringstream &input) {
     string colVal;
     vector<string> temp;
     while (getline(input, colVal, ',')) {
@@ -26,9 +26,9 @@ route readRouteHelp(stringstream &input) {
     return result;
 }
 
-vector<route> readRoutes(const string & routeFile) {
+static vector<route> readRoutes(const string & routeFile) {
     vector<route> result;
-    string line, colVal;
+    string line;
     ifstream file;
     file.open(routeFile);
 
@@ -49,7 +49,7 @@ vector<route> readRoutes(const string & routeFile) {
  * @param input stringstream for CSV airport data,
  * @return airportNode with given info
  */ 
-airportNode readAirportHelp(stringstream &input) {
+static airportNode readAirportHelp(stringstream &input) {
     string colVal;
     vector<string> temp;
     while (getline(input, colVal, ',')) {
@@ -59,7 +59,7 @@ airportNode readAirportHelp(stringstream &input) {
     return result;
 }
 
-vector<airportNode> readAirports(const string & airportFile) {
+static vector<airportNode> readAirports(const string & airportFile) {
     vector<airportNode> result;
     string line;
     ifstream file;
