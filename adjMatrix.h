@@ -58,4 +58,5 @@ class adjMatrix {
         int** matrix;
         std::map<std::string, int> nameToIndex;
         std::map<int, std::string> indexToName;
+        
 };
