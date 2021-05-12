@@ -25,6 +25,10 @@ class Flight {
         vector<string> DFS2(const string &start, const string &end, vector<route> paths, map<int, string> indexToName);
 
     private:
+        std::unordered_map<string, int> airportIdMap;
+        //std::unordered_map<int, vector<edge>> routeMap;
+        //std::unordered_map<int, string> idConvertMap; 
+
 //     private:
 //         string routes; 
 //         string airports; 
