@@ -36,7 +36,7 @@ void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
   
   auto hi = parent[j];
   printPath(parent, hi, srcc, myMatrix);
-  printf("%s ", myMatrix.indexToName[j].c_str());
+  printf("->%s ", myMatrix.indexToName[j].c_str());
 }
 
 /**
@@ -55,7 +55,7 @@ int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix my
   // std::cout << "test 2" << std::endl;
   printPath(parent, i, src, myMatrix);
   flush(std::cout);
-  std::cout << "\nSuccess: There Is Not an ";
+  std::cout << "\n";
   flush(std::cout);
   return -1; 
 }
