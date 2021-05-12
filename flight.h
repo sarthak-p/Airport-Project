@@ -3,7 +3,15 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <queue>
+#include <list>
 #include <deque>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+#include <sstream>
+#include <iostream>
+#include <string>
+#include <stack>
 
 using namespace std;
 
@@ -18,13 +26,14 @@ class Flight {
         Flight();
         void airport(const string &filename, string line);
         void routes(const string &filename);
-           //vector<string> dijkstra(const string &start, const string &end);
-           //unordered_map<int, vector<edge>> routeMap;
-           //unordered_map<string, int> airportIdMap;
         std::vector<std::string> dijkstra(const string &start, const string &end);
+        void DFS(const string & start, vector<edge> paths);
+        vector<string>DFS2(const string & start, const string & end, vector<edge> paths);
+
     private:
         std::unordered_map<int, vector<edge>> routeMap;
         std::unordered_map<string, int> airportIdMap;
+        std::unordered_map<int, string> idConvertMap; 
 
 //     private:
 //         string routes; 

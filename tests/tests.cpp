@@ -12,7 +12,7 @@ TEST_CASE("Succesfully parses airports", "[weight=1]") {
     vector<airportNode> result = readAirports("data/airports.dat");
     airportNode firstAirport = result[0];
     airportNode secondAirport = result[1];
-    double distance = firstAirport.distance(secondAirport);
+    double distance = firstAirport.dist(secondAirport);
     REQUIRE(firstAirport.code_ == "GKA");
     REQUIRE(distance == 106.714);
 }

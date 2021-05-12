@@ -16,11 +16,11 @@ Links to the datasets:
 
 ## Algorithms
 
-- Depth-First Search (DFS). Inputs: Airport and Routes data. Output = DFS Iterator object. Ideal runtime: O(V + E), where V = Vertices and E = Edges.
+- Depth-First Search (DFS): Create two versions of DFS. 1) Inputs: starting airport name and vector of edges. Output = no output but traverses the entire graph starting from the given airport. Ideal runtime: O(V + E), where V = Vertices and E = Edges. 2) Inputs: starting and ending airport names and vector of edges. Output: returns a vector of strings with all possible airports between the start and destination airport. Ideal runtime: O(V + E), where V = vertices and E = Edges. 
 
-- Dijkstra’s Algorithm: Finding the shortest path between two nodes (airports). Useful for finding the shortest distance between two destinations. Input: Names of two places, Output: Returns shortest path between those destinations. Ideal runtime: O( (E + V) log V), where V = Vertices and E = Edges.
+- Dijkstra’s Algorithm: Finding the shortest path between two nodes (airports). Useful for finding the shortest distance between two destinations. Input: Names of two airports, Output: Returns shortest path between those airports. Ideal runtime: O( (E + V) log V), where V = Vertices and E = Edges.
 
-- Betweenness Centrality Algorithm: Find the shortest path between two airports and compute a score based on the number of shortest paths that intersect it. In other words, we find the centrality of airports which tells us the importance of the airport as a transfer location. Input = Country Name, Output = Airport with highest centrality. Runtime: O(N^4), where N = Number of nodes.
+- Normalized Degree Centrality: Find the shortest path between two airports and compute a score based on the number of shortest paths that intersect it. In other words, we find the centrality of airports which tells us the importance of the airport as a transfer location. Input = Country Name, Output = Airport with highest centrality. Runtime: O(N^4), where N = Number of nodes.
 
 ## Timeline
 
@@ -29,20 +29,20 @@ Links to the datasets:
 - **April 16th:** Mid-project Check-in
 
   - Have datasets downloaded and converted
-  - Completed depth-first search traversal algorithm
+  - Completed DFS traversal 
 
 - **May 1st:** Third-project Check-in
 
   - Start final report
   - Complete second algorithm
-  - Begin working on begtweeness centrality algorithm
+  - Begin working on Normalized Degree Centrality
 
 - **May 10th:** Video deadline
 
   - Finalize all code and squash bugs
   - Ensure testing suite is in working order
   - Review final report
-  - Film video
+  - Record final video
 
 - **May 12th:** Final Project Deliverables
 
