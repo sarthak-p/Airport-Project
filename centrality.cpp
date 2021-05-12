@@ -7,25 +7,25 @@
 
 using namespace std;
 
-string calcCentrality(Flight & input, string airportCode) {
+string calcCentrality(adjMatrix inputMatrix, string airportCode) {
     //vector<airportNode> temp;
-    int nodeSize = input.mp.size();
+    int nodeSize = inputMatrix.nameToIndex.size();
     int edgeCounter = 0;
+    string code = "\"" + airportCode + "\"";
     // Change once adj. matrix var is added into Flight class
-    map<string, int>::iterator it = input.mp.find(airportCode);
+    map<string, int>::iterator it = inputMatrix.nameToIndex.find(code);
 
     // Check input for errors before centrality is calculated
     if (airportCode.size() != 3) {
         return "Looks like you input the wrong size airport code.";
         // Update else if once adj. matrix var added
-    } else if (it == input.mp.end()) {
+    } else if (it == inputMatrix.nameToIndex.end()) {
         // Check if airportCode can be found in input Flight object
         return "This airport code couldn't be found.";
     }
-
     int airportIdx = it->second;
     for (int i = 0; i < nodeSize; i++) {
-        if (matrix[i][airportIdx] == 1) {
+        if (inputMatrix.matrix[i][airportIdx] == 1) {
             edgeCounter++;
         }
     }
@@ -33,7 +33,7 @@ string calcCentrality(Flight & input, string airportCode) {
     double normalizedCentrality = edgeCounter / (nodeSize - 1);
     return "The Normalized Degree Centrality for " + airportCode + " is " + to_string(normalizedCentrality) + ".";
 }
-
+/*
 int main() {
     int option;
     vector<airportNode> airportVector = readAirports("data/airports.dat");
@@ -127,3 +127,4 @@ int main() {
     return 0;
 }
 
+*/

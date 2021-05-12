@@ -67,8 +67,8 @@ int main() {
                 cout << "Try inputting the airport again." << endl;
                 cin >> inputAirport;
             }
-            //centrality = calcCentrality(flightGraph, inputAirport);
-            centrality = "testing";
+            centrality = calcCentrality(myMatrix, inputAirport);
+            //centrality = "testing";
             cout << "--------------------" << endl;
             cout << centrality << endl;
             cout << "--------------------" << endl << endl;
