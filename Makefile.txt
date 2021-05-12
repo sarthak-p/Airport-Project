@@ -1,8 +1,8 @@
 # Executable Name
-EXENAME = final # Do ./final to run
+EXENAME = final             # To run, type: ./final
 
 # Object Types
-OBJS = main.o flight.o graph.o
+OBJS = main.o readFromFile.o 
 
 # Compilation Flags
 CXX = clang++
@@ -23,12 +23,15 @@ output_msg: ; $(CLANG_VERSION_MSG)
 $(EXENAME): output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-readFromFile.o: main.cpp flight.cpp graph.cpp 
-	$(CXX) $(CXXFLAGS) main.cpp flight.cpp graph.cpp 
+readFromFile.o: main.cpp readFromFile.cpp
+	$(CXX) $(CXXFLAGS) main.cpp readFromFile.cpp
 
 test: output_msg catch/catchmain.cpp tests/tests.cpp readFromFile.cpp
 	$(LD) catch/catchmain.cpp tests/tests.cpp readFromFile.cpp $(LDFLAGS) -o test
 
 clean:
 	-rm -f *.o $(EXENAME) test
-  
+
+project: main.cpp           # To run, type: make -f Makefile.txt project 
+	$(CXX) $(CXXFLAGS) main.cpp graph.h graph.cpp flight.h flight.cpp centrality.h centrality.cpp adjMatrix.h dijkstra.h 
+	$(LD) main.o graph.o flight.o centrality.o $(LDFLAGS) -o $(EXENAME)
