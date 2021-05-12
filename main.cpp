@@ -8,7 +8,6 @@
 
 using namespace std;
 
-void sebby();
 string getInput(const string &question, const bool &allCaps);
 void getInput(string &startAirport, string &endAirport);
 bool checkIATAFormat(const string &code);
