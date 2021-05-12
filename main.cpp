@@ -4,6 +4,7 @@
 #include "readFromFile.cpp"
 #include "adjMatrix.h"
 #include "dijkstra.h"
+#include "centrality.h"
 
 using namespace std;
 
@@ -16,11 +17,68 @@ void printDFS();
 
 int main() {
     //std::cout << "Open main file" << std::endl;
+    int option;
     string startAirportCode, endAirportCode;
     getInput(startAirportCode, endAirportCode);
     std::vector<airportNode> airportVector = readAirports("data/airports.dat");
     std::vector<route> routeVector = readRoutes("data/routes.dat");
     adjMatrix myMatrix(airportVector, routeVector);
+
+    while (true) {
+        cout << "Which option of the trip planner would you like to use? Please input a number." << endl;
+        cout << "0. Unique trip planner" << endl;
+        cout << "1. Shortest path (Dijkstra's)" << endl;
+        cout << "2. Check connectedness of an airport" << endl;
+        cout << "3. End program" << endl;
+        cin >> option;
+
+        // Ensure proper safety of input 
+        while (cin.fail() || option < 0 || option > 3) {
+            cin.clear();
+            cin.ignore();
+            cout << "Looks like you type the correct input" << endl;
+            cin >> option;
+        }
+
+        // Given user input, perform the desired method.
+        if (option == 0) {
+            vector<string> routesToUse;
+            /*
+            routesToUse = flightGraph.DFS2(source, destination, routeVector);
+            cout << "Flights connect the following airports for a fun trip: " << endl;
+            for (int i = 0; i < routesToUse.size(); i++) {
+                cout << routesToUse[i] << endl;
+            } */
+            cout << "--------------------" << endl;
+            cout << "in progress" << endl;
+            cout << "--------------------" << endl << endl;
+        } else if (option == 1) {
+            cout << "--------------------" << endl;
+            dijkstra(myMatrix.matrix, myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix);
+            cout << endl << "--------------------" << endl << endl;
+        } else if (option == 2) {
+            string inputAirport, centrality;
+            cout << "Enter the capitalized 3-letter airport code you would like to check for degree centrality." << endl;
+            cin >> inputAirport;
+
+            while (cin.fail() || inputAirport.length() != 3) {
+                cin.clear();
+                cin.ignore();
+                cout << "Try inputting the airport again." << endl;
+                cin >> inputAirport;
+            }
+            //centrality = calcCentrality(flightGraph, inputAirport);
+            centrality = "testing";
+            cout << "--------------------" << endl;
+            cout << centrality << endl;
+            cout << "--------------------" << endl << endl;
+        } else {
+            cout << "--------------------" << endl;
+            cout << "Exiting the program." << endl;
+            cout << "--------------------" << endl << endl;
+            return 0;
+        }
+    }    
    
    /* Start and end airport nodes */
     //std::cout << "first airportNode: " << myMatrix.nameToIndex["\"" + startAirportCode + "\""] << std::endl;
@@ -95,5 +153,5 @@ void checkCapitalization(string &text) {
   }
 }
 
-void printDFS(vector )
+//void printDFS(vector )
 
