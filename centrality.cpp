@@ -1,4 +1,5 @@
 #include "centrality.h"
+#include "adjMatrix.h"
 #include <vector>
 #include <map>
 #include <string>
@@ -42,7 +43,7 @@ int main() {
     while (true) {
         cout << "Which option of the trip planner would you like to use? Please input a number." << endl;
         cout << "0. Unique trip planner" << endl;
-        cout << "1. Shortest path" << endl;
+        cout << "1. Shortest path (Dijkstra's)" << endl;
         cout << "2. Check connectedness of an airport" << endl;
         cout << "3. End program" << endl;
         cin >> option;
@@ -60,7 +61,7 @@ int main() {
             string source, destination;
             vector<string> routesToUse;
 
-            cout << "Please enter the 3-letter airport code for the source airport." << endl;
+            cout << "Please enter the capitalized 3-letter airport code for the source airport." << endl;
             cin >> source;
             while (cin.fail() || source.length() != 3) {
                 cin.clear();
@@ -69,7 +70,7 @@ int main() {
                 cin >> source;
             }
 
-            cout << "Please enter the 3-letter airport code for the destination airport." << endl;
+            cout << "Please enter the capitalized 3-letter airport code for the destination airport." << endl;
             cin >> destination;
             while (cin.fail() || destination.length() != 3) {
                 cin.clear();
@@ -84,10 +85,28 @@ int main() {
                 cout << routesToUse[i] << endl;
             }
         } else if (option == 1) {
-            
+            string source, destination;
+            cout << "Please enter the capitalized 3-letter airport code for the source airport." << endl;
+            cin >> source;
+            while (cin.fail() || source.length() != 3) {
+                cin.clear();
+                cin.ignore();
+                cout << "Try inputting the airport again." << endl;
+                cin >> source;
+            }
+
+            cout << "Please enter the capitalized 3-letter airport code for the destination airport." << endl;
+            cin >> destination;
+            while (cin.fail() || destination.length() != 3) {
+                cin.clear();
+                cin.ignore();
+                cout << "Try inputting the airport again." << endl;
+                cin >> destination;
+            }
+            dijkstra(myMatrix.matrix, myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix);
         } else if (option == 2) {
             string inputAirport, centrality;
-            cout << "Enter the 3-letter airport code you would like to check for degree centrality." << endl;
+            cout << "Enter the capitalized 3-letter airport code you would like to check for degree centrality." << endl;
             cin >> inputAirport;
 
             while (cin.fail() || inputAirport.length() != 3) {

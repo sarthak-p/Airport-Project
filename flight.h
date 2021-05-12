@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include "adjMatrix.h"
 
 using namespace std;
 
@@ -27,8 +28,8 @@ class Flight {
         void airport(const string &filename, string line);
         void routes(const string &filename);
         std::vector<std::string> dijkstra(const string &start, const string &end);
-        void DFS(const string & start, vector<edge> paths);
-        vector<string>DFS2(const string & start, const string & end, vector<edge> paths);
+        void DFS(const string & start, vector<route> paths);
+        vector<string>DFS2(const string & start, const string & end, vector<route> paths);
 
     private:
         std::unordered_map<int, vector<edge>> routeMap;
