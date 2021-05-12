@@ -42,23 +42,6 @@ public:
             return 2 * radius * asin(sqrt(hav));
         }
     }
-    
-    // string getName() const {
-    //     return code_;
-    // }
-
-    // bool operator<(const airportNode &a) const {
-    //     return a.latitude_ < a.longitude_;
-    // }
-
-    // bool operator==(const airportNode &a) const {
-    //     return !(*this < a || a < *this);
-    // }
-
-    // bool operator!=(const airportNode &a) const {
-    //     return (*this < a || a < *this);
-    // }
-    
 };
 
 struct route {
@@ -66,38 +49,3 @@ struct route {
     double distance;
     route(string src, string dest) : source(src), destination(dest) {}
 };
-
-
-// namespace std {
-//     template <>
-//     struct hash<airportNode> {
-//         std::size_t operator()(const airportNode &k) const {
-//             return std::hash<std::string>()(k.code_);
-//         }
-//     };
-// }
-
-// struct match {
-//     match(const std::string &s) : s_(s) {}
-//     bool operator()(const airportNode &obj) const {
-//         return obj.getName() == s_;
-//     }
-
-// private:
-//     const std::string &s_;
-// };
-
-
-
-// class Graph {
-//     public:
-//         Graph(vector<airportNode> first, vector<route> second);
-//         void makeGraph(vector<airportNode> airports, vector<route> routes);
-//         //void removeEdge(route edge);
-//         //void addNode(airportNode node);
-//         //void removeNode(airportNode node);
-//         void print();
-//         //vector<route> getAdj(airportNode node);
-//     private:
-//         unordered_map<airportNode, list<pair<airportNode, double > > > adjL; 
-// };

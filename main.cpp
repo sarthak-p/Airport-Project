@@ -1,5 +1,6 @@
 #include <iostream>
 #include "graph.h"
+#include "flight.h"
 #include "readFromFile.cpp"
 #include "adjMatrix.h"
 #include "dijkstra.h"
@@ -11,6 +12,7 @@ string getInput(const string &question, const bool &allCaps);
 void getInput(string &startAirport, string &endAirport);
 bool checkIATAFormat(const string &code);
 void checkCapitalization(string &text);
+void printDFS();
 
 int main() {
     //std::cout << "Open main file" << std::endl;
@@ -28,16 +30,10 @@ int main() {
     return 0; 
 }
 
-/**
-void graph_test() {
-    vector<Airportnode> a = readAirports();
-    vector<route> b = readRoutes();
-    Graph graph = Graph(a, b);
-    graph.print();
-}
-**/
 
-// Prompt user to input start and end IATA airport codes
+/**
+ * Prompt user to input start and end IATA airport codes
+ * */
 void getInput(string &startAirport, string &endAirport) {
     //std::cout << "Test getInput class" << std::endl;
 
@@ -61,7 +57,9 @@ void getInput(string &startAirport, string &endAirport) {
     }
 }
 
-// Get input from user
+/**
+ * Get string input from user 
+ * */
 string getInput(const string &question, const bool &allCaps) {
   string line;
   cout << question;
@@ -72,7 +70,9 @@ string getInput(const string &question, const bool &allCaps) {
   return line;
 }
 
-// Returns true if string is in IATA format
+/**
+ * Checks if the string is in IATA format 
+ * */
 bool checkIATAFormat(const string &code) {
   if (code.size() != 3) {
     return false;
@@ -86,9 +86,14 @@ bool checkIATAFormat(const string &code) {
   return checkLetters;
 }
 
-// Helper function to convert string to all caps if needed
+/**
+ * Helper function to capitalize input string 
+ * */
 void checkCapitalization(string &text) {
   for (size_t i = 0; i < text.size(); ++i) {
     text[i] = toupper(text[i]);
   }
 }
+
+void printDFS(vector )
+

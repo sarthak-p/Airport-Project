@@ -11,6 +11,9 @@ using namespace std;
 
 class adjMatrix {
     public:
+    /** 
+     * constructor that builds the adjacency matrix
+     * */ 
       adjMatrix(std::vector<airportNode> &airportVector, std::vector<route> &routeVector) {
         // Generate the Vlen by Vlen square adjMatrix basework, sets every cost to 0:
         int Vlen = airportVector.size();

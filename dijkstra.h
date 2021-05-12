@@ -8,8 +8,10 @@
 #define V 7698
 #include "adjMatrix.h"
 
-// A utility function to find the vertex with minimum distance value, from the set of vertices
-// not yet included in shortest path tree
+/**
+ * A utility function to find the vertex with minimum distance value, from the set of vertices
+ * not yet included in shortest path tree
+ * */ 
 int minDistance(int dist[], bool sptSet[]) {
   // Initialize min value
   int min = INT_MAX, min_index;
@@ -22,7 +24,9 @@ int minDistance(int dist[], bool sptSet[]) {
   return min_index;
 }
 
-// Function to print shortest path from source to j using parent array
+/**
+ * prints shortest path from source to j using parent array
+ * */ 
 void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
   
   // Base Case : If j is source
@@ -35,8 +39,9 @@ void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
   printf("%s ", myMatrix.indexToName[j].c_str());
 }
 
-// A utility function to print the constructed distance array
-// Where all the printing happens!
+/**
+ * A utility function to print the constructed distance array where all the printing happens!
+ * */ 
 int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix myMatrix) {
   //printf("Vertex\t Distance\tPath");
   int i = destIndex;
@@ -52,10 +57,13 @@ int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix my
   flush(std::cout);
   std::cout << "\nSuccess: There Is Not an ";
   flush(std::cout);
+  return -1; 
 }
 
-// Funtion that implements Dijkstra's single source shortest path algorithm for a graph
-// represented using adjacency matrix representation
+/**
+ * Funtion that implements Dijkstra's single source shortest path algorithm for a graph
+ * represented using adjacency matrix representation
+ * */ 
 void dijkstra(int** graph, int src, int destIndex, adjMatrix myMatrix) {
   // The output array. dist[i] will hold the shortest distance from src to i
   int dist[V];
@@ -79,6 +87,7 @@ void dijkstra(int** graph, int src, int destIndex, adjMatrix myMatrix) {
 
   // Find shortest path for all vertices
   for (int count = 0; count < V - 1; count++) {
+
     // Pick the minimum distance vertex from the set of vertices not yet processed.
     // u is always equal to src in first iteration.
     int u = minDistance(dist, sptSet);
@@ -97,7 +106,7 @@ void dijkstra(int** graph, int src, int destIndex, adjMatrix myMatrix) {
     }
 }
 
-// Print the constructed distance array
+//Print the constructed distance array
 printSolution(dist, parent, destIndex, src, myMatrix);
  //printSolution(dist, V, parent, destIndex, src);
 }
