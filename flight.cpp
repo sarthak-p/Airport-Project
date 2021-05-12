@@ -8,74 +8,6 @@ using namespace std;
 // Flight::Flight() {
 // }
 
-/** 
- * Dijkstra's algorithm for finding the shortest path between two airports
- * */ 
-std::vector<std::string> Flight::dijkstra(const string &start, const string &end) { 
-    // Error messages 
-    if (!airportIdMap.count(start)) {
-        cout << "Error: Starting location not found" << endl;
-    }
-    if (!airportIdMap.count(end)) {
-        cout << "Error: Ending location not found" << endl;
-    }
-    if (start == end) {
-        cout << "Error: Starting and ending location are the same" << endl;
-    }
-
-    int startId = airportIdMap[start]; //example ID = ORD is O'Hare, Chicago 
-    int endId = airportIdMap[end];
-    
-    // priority_queue<pair<int, int>> pq;
-    priority_queue<pair<double, edge>> pq;
-    unordered_set<int> processed;
-    unordered_map<int, int> parentOfId;
-    
-    // Gets vector with all connecting routes with an airport
-    vector<edge> connectingEdges = routeMap[startId];
-    processed.insert(startId);
-    
-    // Intial case
-    for (size_t i = 0; i < connectingEdges.size(); ++i) {
-      pq.push(pair<double, edge>(-1 * connectingEdges[i].distance, connectingEdges[i]));
-    }
-
-    // Loop until shortest path or no path is found
-    int nextId = -1;
-    double nextDistance;
-    while (nextId != endId && !pq.empty()) {
-      nextDistance = pq.top().first;
-      nextId = pq.top().second.destId;
-      edge temp = pq.top().second;
-      pq.pop();
-
-      if (processed.find(nextId) == processed.end()) {
-        parentOfId.insert(pair<int, int>(temp.destId, temp.sourceId));
-        connectingEdges = routeMap[nextId];
-        for (size_t i = 0; i < connectingEdges.size(); ++i) {
-          pq.push(pair<double, edge>(-1*connectingEdges[i].distance + nextDistance, connectingEdges[i]));
-        }
-          processed.insert(nextId);
-        }
-    }
-    
-    // If no route is found betwen airports
-    if (nextId != endId && pq.empty()) {
-       cout << "No route found." << endl;
-    }
-    
-    // Traverse parents in deque to put resulting path
-    deque<int> resulting_path;
-    int parent = endId;
-    while (parent != startId) {
-      resulting_path.push_front(parent);
-      parent = parentOfId[parent];
-    }
-    resulting_path.push_front(parent);
-    
-    // Need to output path
-}
-
 /**
  * Performs a DFS traversal of the whole graph beginning from the start airport 
  * */
@@ -126,7 +58,7 @@ void Flight::DFS(const string & start, vector<route> paths) {
 /**
  * Performs a DFS traversal of the graph from start to end airport and outputs the path 
  * */
-vector<string> Flight::DFS2(const string &start, const string &end, vector<route> paths) {
+vector<string> Flight::DFS2(const string &start, const string &end, vector<route> paths, map<int, string> convertIndex) {
 
   if (airportIdMap.count(start) == 0) {
     cout << "Error: Starting Location Not Found" << endl;
@@ -192,10 +124,10 @@ vector<string> Flight::DFS2(const string &start, const string &end, vector<route
   //creating a vector of string that converts int code to IATA
   vector<string>converted; 
   for (int i : track) {
-    converted.push_back(idConvertMap[i]); 
+    converted.push_back(convertIndex[i]); 
   }
   //returning the vector which contains the path from start to end 
-  return converted; 
+  return converted;
 }
 
 /*
