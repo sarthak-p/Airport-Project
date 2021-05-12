@@ -10,7 +10,7 @@ using namespace std;
 string calcCentrality(adjMatrix inputMatrix, string airportCode) {
     //vector<airportNode> temp;
     int nodeSize = inputMatrix.nameToIndex.size();
-    int edgeCounter = 0;
+    size_t edgeCounter = 0;
     string code = "\"" + airportCode + "\"";
     // Change once adj. matrix var is added into Flight class
     map<string, int>::iterator it = inputMatrix.nameToIndex.find(code);
@@ -24,8 +24,10 @@ string calcCentrality(adjMatrix inputMatrix, string airportCode) {
         return "This airport code couldn't be found.";
     }
     int airportIdx = it->second;
-    for (int i = 0; i < nodeSize; i++) {
-        if (inputMatrix.matrix[i][airportIdx] == 1) {
+    cout << airportIdx << endl;
+    cout << nodeSize << endl;
+    for (size_t i = 0; i < nodeSize; i++) {
+        if (inputMatrix.matrix[airportIdx][i] != -1 || inputMatrix.matrix[airportIdx][i] != 0) {
             edgeCounter++;
         }
     }
