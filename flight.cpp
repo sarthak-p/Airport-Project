@@ -126,7 +126,7 @@ void Flight::DFS(const string & start, vector<route> paths) {
 /**
  * Performs a DFS traversal of the graph from start to end airport and outputs the path 
  * */
-vector<string> Flight::DFS2(const string &start, const string &end, vector<route> paths) {
+vector<string> Flight::DFS2(const string &start, const string &end, vector<route> paths, map<int, string> convertIndex) {
 
   if (airportIdMap.count(start) == 0) {
     cout << "Error: Starting Location Not Found" << endl;
@@ -192,10 +192,10 @@ vector<string> Flight::DFS2(const string &start, const string &end, vector<route
   //creating a vector of string that converts int code to IATA
   vector<string>converted; 
   for (int i : track) {
-    converted.push_back(idConvertMap[i]); 
+    converted.push_back(convertIndex[i]); 
   }
   //returning the vector which contains the path from start to end 
-  return converted; 
+  return converted;
 }
 
 /*
