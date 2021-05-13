@@ -39,21 +39,31 @@ This will create an executable named 'test'. Run this command in the terminal:
 ./test
 ```
 ## How to run and test our program?
-### Steps:
+### Steps
 - First, the user will be prompted to enter the IATA code of the airport of their departure location in all capitalized letters directly in the terminal.
 For example, the IATA code of Chicago O’Hare International Airport is ORD. 
-(insert picture)
 
 - Next, the user will be prompted to input the IATA code of the airport of their desired arrival location in all capitalized letters directly in the terminal. 
-(insert picture)
 
 - Then, the user will be prompted to select which part of the trip planner they would like to use:
-	- 0: Unique trip planner
+	- 0: Unique trip planner (DFS)
 	- 1: Shortest path (Dijkstra's Algorithm)
 	- 2: Check connectedness of an airport (Normalized Degree Centrality Algorithm)
 	- 3: End program
 
-- Finally, the total distance in kilometers the trip would take and the shortest path between airports will be printed directly to the terminal. If there is not a route between two airports, the user will be told that there is no possible path in the 2,147,483,647 kilometers between all possible airport routes.
+- Finally, based on the user's choice, the following information will be printed directly in the terminal:
+	- If the user selects 0: Unique Trip Planner
+		- A list with all the possible airport codes 
+	- If the user selects 1: Shortest Path (Dijkstra)
+		- The total distance in kilometers the shortest trip would take and the shortest path between two airports
+	- If the user selects 2: Connectedness (Centrality)
+		- The calculated normal degree centrality for a single airport
 
-### Example result
-(insert picture of an example later)
+### Examples:
+#### User is prompted to select from trip menu
+![Picture](/images/projectMenu.png)
+#### 1: Shortest Path (Dijsktra)
+![Picture](/images/dijkstra.png)
+#### 2: Connectedness (Centrality)
+![Picture](/images/degreeCentrality.png)
+
