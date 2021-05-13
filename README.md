@@ -1,5 +1,4 @@
-# Trip Planner: Global Flight Simulator
-# Shortest Path & Centrality
+# Trip Planner: Global Flight Simulator - Shortest Path & Centrality
 
 ## Team Members: Sarthak Patipati, Carter Smith, Sebastian Carrera, Isabel Alviar
 - spati20
@@ -8,7 +7,7 @@
 - ialviar2
 
 ## How does our project work?
-Our final project for CS225 parses “real-world” airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
+Our final project for CS225 parses real-world airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
 
 ### Location of data
 The raw data files we used from OpenFlights can be viewed by opening the data folder:
@@ -17,7 +16,6 @@ cd data
 ```
 Links to the datasets:
 [airports.dat](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat)
-[airlines.dat](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat)
 [routes.dat](https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat)
 
 ## How to build our program?
@@ -41,10 +39,10 @@ Next, the user will be prompted to input the IATA code of the airport of their d
 (insert picture)
 
 Then, the user will be prompted to select which part of the trip planner they would like to use:
-0. Unique trip planner
-1. Shortest path (Dijkstra's Algorithm)
-2. Check connectedness of an airport (Normalized Degree Centrality Algorithm)
-3. End program
+	0) Unique trip planner
+	1) Shortest path (Dijkstra's Algorithm)
+	2) Check connectedness of an airport (Normalized Degree Centrality Algorithm)
+	3) End program
 
 Finally, the total distance in kilometers the trip would take and the shortest path between airports will be printed directly to the terminal. If there is not a route between two airports, the user will be told that there is no possible path in the 2,147,483,647 kilometers between all possible airport routes.
 
