@@ -25,7 +25,7 @@ int minDistance(int dist[], bool sptSet[]) {
 }
 
 /**
- * prints shortest path from source to j using parent array
+ * Prints shortest path from source to j using parent array
  * */ 
 void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
   
@@ -34,9 +34,21 @@ void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
     return;
   }
   
+  
+  /*if 0 < total distance < 2147483647 
+    print distance
+    print path
+  else if total distance = 2147483647
+    print no possible path
+  else if total distance = 0 
+    print no possible path
+  else 
+    print no possible path
+  */
+    
   auto hi = parent[j];
   printPath(parent, hi, srcc, myMatrix);
-  printf("->%s ", myMatrix.indexToName[j].c_str());
+  printf("-> %s", myMatrix.indexToName[j].c_str());
 }
 
 /**
@@ -46,12 +58,17 @@ int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix my
   //printf("Vertex\t Distance\tPath");
   int i = destIndex;
   //for (int i = 1; i < V; i++) {
-  //std::cout << "-----------------------------------------------------------------------------------" << std::endl;
+  //std::cout << "------------------------------------------------------------------------" << std::endl;
+  if (dist[i] == 2147483647) {
+    cout << "There is no possible path in the 2,147,483,647 kilometers between all possible airport routes" << endl;
+    return 0;
+  }
   std::cout << "Shortest Total Distance: " << dist[i] << " kilometers" << std::endl;
   //std::cout << "test" << std::endl;
   std::cout << "Shortest Airport Path: ";
   printf(myMatrix.indexToName[src].c_str(), myMatrix.indexToName[i].c_str(), dist[i], myMatrix.indexToName[src].c_str());
   flush(std::cout);
+  //std::cout << " " << std::endl;
   // std::cout << "test 2" << std::endl;
   printPath(parent, i, src, myMatrix);
   flush(std::cout);

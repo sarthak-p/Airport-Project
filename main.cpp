@@ -5,6 +5,7 @@
 #include "adjMatrix.h"
 #include "dijkstra.h"
 #include "centrality.h"
+#include "DFS.h"
 
 using namespace std;
 
@@ -20,6 +21,26 @@ int main() {
     string startAirportCode, endAirportCode;
     getInput(startAirportCode, endAirportCode);
     std::vector<airportNode> airportVector = readAirports("data/airports.dat");
+    // Check if input is a valid IATA code from the data
+    int in1 = 0;
+    int in2 = 0;
+    while((!in1 || !in2)) {
+      getInput(startAirportCode, endAirportCode);
+      in1 = 0;
+      in2 = 0;
+      for (int i = 0; i < airportVector.size() && (!in1 || !in2); i++) {
+        auto apn = airportVector[i];
+        if (apn.code_ == "\""+startAirportCode+"\"") {
+          in1 = 1;
+        }
+        if (apn.code_ == "\""+endAirportCode+"\"") {
+          in2 = 1;
+        }
+      }
+      if ((!in1 || !in2)) {
+        cout << "One or more invalid IATA codes. Try again." << endl;
+      }
+    }
     std::vector<route> routeVector = readRoutes("data/routes.dat");
     adjMatrix myMatrix(airportVector, routeVector);
 
@@ -42,12 +63,15 @@ int main() {
         // Given user input, perform the desired method.
         if (option == 0) {
             vector<string> routesToUse;
-            /*
-            routesToUse = flightGraph.DFS2(source, destination, routeVector);
+            vector<bool> visited(7698);
+            for (int i = 0; i < 7698; i++) {
+                visited[i] = false; 
+            }
+            routesToUse = DFS3(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix, visited);
             cout << "Flights connect the following airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
                 cout << routesToUse[i] << endl;
-            } */
+            } 
             cout << "--------------------" << endl;
             cout << "in progress" << endl;
             cout << "--------------------" << endl << endl;
@@ -151,6 +175,4 @@ void checkCapitalization(string &text) {
     text[i] = toupper(text[i]);
   }
 }
-
-//void printDFS(vector )
 
