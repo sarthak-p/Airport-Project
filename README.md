@@ -53,11 +53,11 @@ For example, the IATA code of Chicago O’Hare International Airport is ORD.
 
 - Finally, based on the user's choice, the following information will be printed directly in the terminal:
 	- If the user selects 0: Unique Trip Planner
- 		A list with all the possible airport codes 
+		- A list with all the possible airport codes 
 	- If the user selects 1: Shortest Path (Dijkstra)
-		The total distance in kilometers the shortest trip would take and the shortest path between two airports
+		- The total distance in kilometers the shortest trip would take and the shortest path between two airports
 	- If the user selects 2: Connectedness (Centrality)
-		The calculated normal degree centrality for a single airport
+		- The calculated normal degree centrality for a single airport
 
 ### Examples:
 #### User is prompted to select from trip menu
