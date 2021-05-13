@@ -54,10 +54,10 @@ For example, the IATA code of Chicago O’Hare International Airport is ORD.
 - Finally, the total distance in kilometers the trip would take and the shortest path between airports will be printed directly to the terminal. If there is not a route between two airports, the user will be told that there is no possible path in the 2,147,483,647 kilometers between all possible airport routes.
 
 ### Example:
-- Trip Menu
+#### User is prompted to select from trip menu
 ![Picture](/images/projectMenu.png)
-- Dijsktra
+#### 1: Shortest Path (Dijsktra)
 ![Picture](/images/dijkstra.png)
-- Centrality 
+#### 2: Connectedness (Centrality)
 ![Picture](/images/degreeCentrality.png)
 
