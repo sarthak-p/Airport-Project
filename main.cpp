@@ -70,16 +70,10 @@ int main() {
             //vector<string> whole_graph = DFS(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix, visited, airportVector.size());
     
             routesToUse = DFS2(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], visited, myMatrix, airportVector.size());
-            routesToUse.erase(remove_if(routesToUse.begin(), routesToUse.end(), [](std::string const &s) { return s.size() != 0 && s.front() == ';'; }),
-                              routesToUse.end());
             cout << "Airports between your source and destination airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
-                if (routesToUse[i] != endAirportCode) {
-                    cout << routesToUse[i] << endl;
-                } else {
-                    return 0; 
-                }
-            } 
+                cout << routesToUse[i] << endl;
+            }
         } else if (option == 1) {
             cout << "--------------------" << endl;
             dijkstra(myMatrix.matrix, myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix);
