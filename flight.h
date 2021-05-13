@@ -26,14 +26,5 @@ class Flight {
 
     private:
         std::unordered_map<string, int> airportIdMap;
-        //std::unordered_map<int, vector<edge>> routeMap;
-        //std::unordered_map<int, string> idConvertMap; 
-
-//     private:
-//         string routes; 
-//         string airports; 
-//         vector<int> departure;
-//         vector<int> arrival; 
-// };
 };
 

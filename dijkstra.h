@@ -33,18 +33,6 @@ void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
   if (j == srcc) {
     return;
   }
-  
-  
-  /*if 0 < total distance < 2147483647 
-    print distance
-    print path
-  else if total distance = 2147483647
-    print no possible path
-  else if total distance = 0 
-    print no possible path
-  else 
-    print no possible path
-  */
     
   auto hi = parent[j];
   printPath(parent, hi, srcc, myMatrix);
@@ -55,24 +43,17 @@ void printPath(int parent[], int j, int srcc, adjMatrix myMatrix) {
  * A utility function to print the constructed distance array where all the printing happens!
  * */ 
 int printSolution(int dist[], int parent[], int destIndex, int src, adjMatrix myMatrix) {
-  //printf("Vertex\t Distance\tPath");
   int i = destIndex;
-  //for (int i = 1; i < V; i++) {
-  //std::cout << "------------------------------------------------------------------------" << std::endl;
   if (dist[i] == 2147483647) {
     cout << "There is no possible path in the 2,147,483,647 kilometers between all possible airport routes" << endl;
     return 0;
   }
   std::cout << "Shortest Total Distance: " << dist[i] << " kilometers" << std::endl;
-  //std::cout << "test" << std::endl;
   std::cout << "Shortest Airport Path: ";
   printf(myMatrix.indexToName[src].c_str(), myMatrix.indexToName[i].c_str(), dist[i], myMatrix.indexToName[src].c_str());
   flush(std::cout);
-  //std::cout << " " << std::endl;
-  // std::cout << "test 2" << std::endl;
   printPath(parent, i, src, myMatrix);
   flush(std::cout);
-  //std::cout << "\n";
   flush(std::cout);
   return -1; 
 }
@@ -125,5 +106,4 @@ void dijkstra(int** graph, int src, int destIndex, adjMatrix myMatrix) {
 
 //Print the constructed distance array
 printSolution(dist, parent, destIndex, src, myMatrix);
- //printSolution(dist, V, parent, destIndex, src);
 }

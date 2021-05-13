@@ -5,9 +5,6 @@
 
 using namespace std;
 
-// Flight::Flight() {
-// }
-
 /**
  * Performs a DFS traversal of the whole graph beginning from the start airport 
  * */
@@ -129,28 +126,3 @@ vector<string> Flight::DFS2(const string &start, const string &end, vector<route
   //returning the vector which contains the path from start to end 
   return converted;
 }
-
-/*
-void Flight::airport(const string & filename, string line) {
-    ifstream airportFile(filename.c_str());
-    string name, sname, country, ID, cID;
-    string useless1, useless2, useless3, stringLat, stringLong;
-
-    while (airportFile.good()) {
-        getline(s, name, ',');
-        getline(s, sname, ',');
-        getline(s, country, ',');
-        getline(s, ID, ',');
-        getline(s, cID, ',');
-        getline(s, stringLat, ',');
-        getline(s, stringLong, ',');
-        getline(s, useless1, ',');
-        getline(s, useless2, ',');
-        getline(s, useless3, '\n');
-    }
-
-    //vector fields
-    airportNode entry(name, stoi(ID), stod(stringLat), stod(stringLong));
-    airportFile.close();
-}
-*/

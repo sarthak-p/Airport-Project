@@ -67,7 +67,6 @@ int main() {
             }
 
             //can call the main DFS fuction that traverses through the whole graph and print the vector by uncommenting the below line
-            //vector<string> whole_graph = DFS(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix, visited, airportVector.size());
             routesToUse = DFS2(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], visited, myMatrix, airportVector.size());
             cout << "Airports between your source and destination airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
@@ -100,10 +99,6 @@ int main() {
         }
     }    
    
-   /* Start and end airport nodes */
-    //std::cout << "first airportNode: " << myMatrix.nameToIndex["\"" + startAirportCode + "\""] << std::endl;
-    //std::cout << "second airportNode: " << myMatrix.nameToIndex["\"" + endAirportCode + "\""] << std::endl;
-    //std::cout <<"dist in matrix:"<< myMatrix.matrix[3547][3617] << std::endl;
     dijkstra(myMatrix.matrix, myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix);
     return 0; 
 }
@@ -113,8 +108,6 @@ int main() {
  * Prompt user to input start and end IATA airport codes
  * */
 void getInput(string &startAirport, string &endAirport) {
-    //std::cout << "Test getInput class" << std::endl;
-
     bool valid = false;
     while (!valid) {
         startAirport = getInput("Input IATA code of start airport (ALL CAPS): ", true);
