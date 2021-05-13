@@ -90,7 +90,6 @@ int main() {
                 cin >> inputAirport;
             }
             centrality = calcCentrality(myMatrix, inputAirport, airportVector.size());
-            //centrality = "testing";
             cout << "------------------------------------------------------------" << endl;
             cout << centrality << endl;
             cout << "------------------------------------------------------------" << endl << endl;
