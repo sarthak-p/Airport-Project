@@ -51,7 +51,7 @@ int main() {
         cin >> option;
 
         // Ensure proper safety of input 
-        while (cin.fail()) {
+        while (cin.fail() || option < 0 || option > 3) {
             cin.clear();
             cin.ignore();
             cout << "Looks like you didn't type the correct input" << endl;
@@ -87,9 +87,9 @@ int main() {
             }
             centrality = calcCentrality(myMatrix, inputAirport, airportVector.size());
             //centrality = "testing";
-            cout << "--------------------" << endl;
+            cout << "------------------------------------------------------------" << endl;
             cout << centrality << endl;
-            cout << "--------------------" << endl << endl;
+            cout << "------------------------------------------------------------" << endl << endl;
         } else {
             cout << "--------------------" << endl;
             cout << "Exiting the program." << endl;

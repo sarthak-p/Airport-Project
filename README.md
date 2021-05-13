@@ -20,14 +20,23 @@ Links to the datasets:
 
 ## How to build our program?
 ### To build the program, run:
-```make -f Makefile.txt
-make -f Makefile.txt
+```
+g++ main.cpp centrality.cpp -o main
 ```
 in the terminal.
 
-The makefile will create a executable file named 'final'. Run this command in the terminal: 
-```final
-./final
+This will create a executable file named 'main'. Run this command in the terminal:
+```
+./main
+```
+### To build the testing suite, run:
+```
+make -f Makefile.txt test
+```
+in the terminal.
+This will create an executable named 'test'. Run this command in the terminal:
+```
+./test
 ```
 ## How to run and test our program?
 ### Steps:
