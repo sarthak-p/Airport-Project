@@ -39,10 +39,10 @@ For example, the IATA code of Chicago O’Hare International Airport is ORD.
 (insert picture)
 
 - Then, the user will be prompted to select which part of the trip planner they would like to use:
-	- 0) Unique trip planner
-	- 1) Shortest path (Dijkstra's Algorithm)
-	- 2) Check connectedness of an airport (Normalized Degree Centrality Algorithm)
-	- 3) End program
+	- 0: Unique trip planner
+	- 1: Shortest path (Dijkstra's Algorithm)
+	- 2: Check connectedness of an airport (Normalized Degree Centrality Algorithm)
+	- 3: End program
 
 - Finally, the total distance in kilometers the trip would take and the shortest path between airports will be printed directly to the terminal. If there is not a route between two airports, the user will be told that there is no possible path in the 2,147,483,647 kilometers between all possible airport routes.
 
