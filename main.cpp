@@ -68,7 +68,6 @@ int main() {
 
             //can call the main DFS fuction that traverses through the whole graph and print the vector by uncommenting the below line
             //vector<string> whole_graph = DFS(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix, visited, airportVector.size());
-    
             routesToUse = DFS2(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], visited, myMatrix, airportVector.size());
             cout << "Airports between your source and destination airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
