@@ -67,8 +67,11 @@ vector<string> DFS2(int start, int end, vector<bool> visited, adjMatrix myMatrix
         reference.pop();
 
         //if our start point is the same as the end point, then we are done 
+        //NOTE: the function does not add the destination airport in the list since we break before that.
+        //      However, we still add the airport before the destination airport
         if (start == end) {
-            break; 
+            track.push_back(myMatrix.indexToName[end]);
+            break;
         }
 
         //find the adjacent nodes of all nodes from the adjacency matrix and perform DFS 

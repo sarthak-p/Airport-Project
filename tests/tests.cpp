@@ -24,3 +24,5 @@ TEST_CASE("Succesfully parses routes", "[weight=1]") {
     REQUIRE(firstRoute.source == "AER");
     REQUIRE(firstRoute.destination == "KZN");
 }
+
+
