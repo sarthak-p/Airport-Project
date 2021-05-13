@@ -1,7 +1,5 @@
 # Goals
 
-*A two-page proposal which includes: (1) the dataset you are using, with details including source location, format, and how it will be processed. (2) the specific algorithms you have chosen to implement, including their input and output, (3) what final deliverable you will complete to prove your methods have worked and (4) a timeline to accomplish these goals.*
-
 ## Leading Question
 
 The purpose of this project is to investigate the shortest paths between two given airports (and possibly all the connecting airports) and identify the connectedness of a given airport. This can be used as a general search tool to find all of the possible paths from one airport to another and ultimately the shortest distance between two airports. This information will be printed to the user directly in the terminal after they are prompted to input the desired starting and ending airport codes.
