@@ -7,8 +7,8 @@
 
 using namespace std;
 
-string calcCentrality(adjMatrix inputMatrix, string airportCode) {
-    int nodeSize = inputMatrix.nameToIndex.size();
+string calcCentrality(adjMatrix & inputMatrix, string & airportCode, double airportSize) {
+    //int nodeSize = inputMatrix.nameToIndex.size();
     size_t edgeCounter = 0;
     string code = "\"" + airportCode + "\"";
     map<string, int>::iterator it = inputMatrix.nameToIndex.find(code);
@@ -21,14 +21,12 @@ string calcCentrality(adjMatrix inputMatrix, string airportCode) {
     }
 
     int airportIdx = it->second;
-    cout << airportIdx << endl;
-    cout << nodeSize << endl;
-    for (size_t i = 0; i < nodeSize; i++) {
+    for (size_t i = 0; i < airportSize; i++) {
         if (inputMatrix.matrix[i][airportIdx] != -1 && inputMatrix.matrix[i][airportIdx] != 0) {
             edgeCounter++;
         }
     }
 
-    double normalizedCentrality = edgeCounter / (nodeSize - 1);
+    double normalizedCentrality = edgeCounter / (airportSize - 1);
     return "The Normalized Degree Centrality for " + airportCode + " is " + to_string(normalizedCentrality) + ".";
 }

@@ -16,10 +16,8 @@ void checkCapitalization(string &text);
 void printDFS();
 
 int main() {
-    //std::cout << "Open main file" << std::endl;
     int option;
     string startAirportCode, endAirportCode;
-    getInput(startAirportCode, endAirportCode);
     std::vector<airportNode> airportVector = readAirports("data/airports.dat");
     // Check if input is a valid IATA code from the data
     int in1 = 0;
@@ -70,11 +68,8 @@ int main() {
             routesToUse = DFS3(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix, visited);
             cout << "Flights connect the following airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
-                cout << routesToUse[i] << endl;
+                cout << routesToUse[i] << " -> " << endl;
             } 
-            cout << "--------------------" << endl;
-            cout << "in progress" << endl;
-            cout << "--------------------" << endl << endl;
         } else if (option == 1) {
             cout << "--------------------" << endl;
             dijkstra(myMatrix.matrix, myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix);
@@ -90,7 +85,7 @@ int main() {
                 cout << "Try inputting the airport again." << endl;
                 cin >> inputAirport;
             }
-            centrality = calcCentrality(myMatrix, inputAirport);
+            centrality = calcCentrality(myMatrix, inputAirport, airportVector.size());
             //centrality = "testing";
             cout << "--------------------" << endl;
             cout << centrality << endl;
