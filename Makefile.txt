@@ -33,5 +33,5 @@ clean:
 	-rm -f *.o $(EXENAME) test
 
 project: main.cpp           # To run, type: make -f Makefile.txt project 
-	$(CXX) $(CXXFLAGS) main.cpp graph.h graph.cpp flight.h flight.cpp centrality.h centrality.cpp adjMatrix.h dijkstra.h 
+	$(CXX) $(CXXFLAGS) main.cpp graph.h graph.cpp flight.h flight.cpp centrality.h centrality.cpp adjMatrix.h dijkstra.h DFS.h
 	$(LD) main.o graph.o flight.o centrality.o $(LDFLAGS) -o $(EXENAME)
