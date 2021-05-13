@@ -43,7 +43,7 @@ int main() {
     adjMatrix myMatrix(airportVector, routeVector);
 
     while (true) {
-        cout << "Which option of the trip planner would you like to use? Please input a number." << endl;
+        cout << "\nWhich option of the trip planner would you like to use? Please input a number." << endl;
         cout << "0. Unique trip planner" << endl;
         cout << "1. Shortest path (Dijkstra's)" << endl;
         cout << "2. Check connectedness of an airport" << endl;
@@ -76,7 +76,7 @@ int main() {
             cout << endl << "--------------------" << endl << endl;
         } else if (option == 2) {
             string inputAirport, centrality;
-            cout << "Enter the capitalized 3-letter airport code you would like to check for degree centrality." << endl;
+            cout << "\nEnter the capitalized 3-letter airport code you would like to check for degree centrality." << endl;
             cin >> inputAirport;
 
             while (cin.fail() || inputAirport.length() != 3) {
