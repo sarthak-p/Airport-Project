@@ -65,10 +65,12 @@ int main() {
             for (int i = 0; i < 7698; i++) {
                 visited[i] = false; 
             }
-            routesToUse = DFS3(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], myMatrix, visited);
+            //can call the main DFS fuction that traverses through the whole graph and print the vector by uncommenting the below line
+            //vector<string> whole_graph = DFS(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix, visited, airportVector.size());
+            routesToUse = DFS2(myMatrix.nameToIndex["\"" + startAirportCode + "\""], myMatrix.nameToIndex["\"" + endAirportCode + "\""], visited, myMatrix, airportVector.size());
             cout << "Flights connect the following airports for a fun trip: " << endl;
             for (int i = 0; i < routesToUse.size(); i++) {
-                cout << routesToUse[i] << " -> " << endl;
+                cout << routesToUse[i] << endl;
             } 
         } else if (option == 1) {
             cout << "--------------------" << endl;
