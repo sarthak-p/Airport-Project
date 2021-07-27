@@ -4,7 +4,7 @@
 The project parses real-world airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
 
 ### Location of data
-The raw data files we used from OpenFlights can be viewed by opening the data folder:
+The raw data files used from OpenFlights can be viewed by opening the data folder:
 ```cd data
 cd data
 ```
