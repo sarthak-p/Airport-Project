@@ -1,13 +1,9 @@
 # Trip Planner: Global Flight Simulator - Shortest Path & Centrality
 
-## Team Members: Sarthak Patipati, Carter Smith, Sebastian Carrera, Isabel Alviar
-- spati20
-- carters3
-- carrera9
 - ialviar2
 
-## How does our project work?
-Our final project for CS225 parses real-world airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
+## How does the project work?
+The project parses real-world airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
 
 ### Location of data
 The raw data files we used from OpenFlights can be viewed by opening the data folder:
@@ -18,7 +14,7 @@ Links to the datasets:
 [airports.dat](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat)
 [routes.dat](https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat)
 
-## How to build our program?
+## How to build the program?
 ### To build the program, run:
 ```
 g++ main.cpp centrality.cpp -o main
@@ -38,7 +34,7 @@ This will create an executable named 'test'. Run this command in the terminal:
 ```
 ./test
 ```
-## How to run and test our program?
+## How to run and test the program?
 ### Steps
 - First, the user will be prompted to enter the IATA code of the airport of their departure location in all capitalized letters directly in the terminal.
 For example, the IATA code of Chicago O’Hare International Airport is ORD. 
