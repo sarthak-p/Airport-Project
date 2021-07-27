@@ -61,7 +61,7 @@ For example, the IATA code of Chicago O’Hare International Airport is ORD.
 #### 2: Connectedness (Centrality)
 ![Picture](/images/degreeCentrality.png)
 
-### Final Presentation Link: https://youtu.be/1_MHqG7orV4
+### Presentation Link: https://youtu.be/1_MHqG7orV4
 
 ### Demo Video Link: https://youtu.be/0FIJP5yoOXI
 
