@@ -1,6 +1,6 @@
 # Trip Planner: Global Flight Simulator - Shortest Path & Centrality
 
-![](/images/Screen Recording 2021-08-12 at 11.23.08 AM.mov)
+![](/images/airport-demo.gif)
 
 ## How does the project work?
 The project parses real-world airport and route data from [OpenFlights.org](https://openflights.org) to create a custom graph structure for performing operations. This includes finding the shortest path between two airports using Depth-First Search (DFS) Traversal, calculating distance between airports and the total distance of the trip using Dijkstra's Algorithm, and measuring the connectedness of a given airport node using the Normalized Degree Centrality Algorithm. 
